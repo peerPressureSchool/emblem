@@ -1,0 +1,443 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02D9CA521AF838330087175F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D9CA511AF838330087175F /* AppDelegate.swift */; };
+		02D9CA551AF838330087175F /* Emelem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02D9CA531AF838330087175F /* Emelem.xcdatamodeld */; };
+		02D9CA571AF838330087175F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D9CA561AF838330087175F /* ViewController.swift */; };
+		02D9CA5A1AF838330087175F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02D9CA581AF838330087175F /* Main.storyboard */; };
+		02D9CA5C1AF838330087175F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02D9CA5B1AF838330087175F /* Images.xcassets */; };
+		02D9CA5F1AF838330087175F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02D9CA5D1AF838330087175F /* LaunchScreen.xib */; };
+		02D9CA6B1AF838330087175F /* EmelemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D9CA6A1AF838330087175F /* EmelemTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		02D9CA651AF838330087175F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02D9CA441AF838330087175F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 02D9CA4B1AF838330087175F;
+			remoteInfo = Emelem;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		02D9CA4C1AF838330087175F /* Emelem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Emelem.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		02D9CA501AF838330087175F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02D9CA511AF838330087175F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		02D9CA541AF838330087175F /* Emelem.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Emelem.xcdatamodel; sourceTree = "<group>"; };
+		02D9CA561AF838330087175F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		02D9CA591AF838330087175F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		02D9CA5B1AF838330087175F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		02D9CA5E1AF838330087175F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		02D9CA641AF838330087175F /* EmelemTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmelemTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		02D9CA691AF838330087175F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02D9CA6A1AF838330087175F /* EmelemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmelemTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		02D9CA491AF838330087175F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02D9CA611AF838330087175F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		02D9CA431AF838330087175F = {
+			isa = PBXGroup;
+			children = (
+				02D9CA4E1AF838330087175F /* Emelem */,
+				02D9CA671AF838330087175F /* EmelemTests */,
+				02D9CA4D1AF838330087175F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		02D9CA4D1AF838330087175F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				02D9CA4C1AF838330087175F /* Emelem.app */,
+				02D9CA641AF838330087175F /* EmelemTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		02D9CA4E1AF838330087175F /* Emelem */ = {
+			isa = PBXGroup;
+			children = (
+				02D9CA511AF838330087175F /* AppDelegate.swift */,
+				02D9CA561AF838330087175F /* ViewController.swift */,
+				02D9CA581AF838330087175F /* Main.storyboard */,
+				02D9CA5B1AF838330087175F /* Images.xcassets */,
+				02D9CA5D1AF838330087175F /* LaunchScreen.xib */,
+				02D9CA531AF838330087175F /* Emelem.xcdatamodeld */,
+				02D9CA4F1AF838330087175F /* Supporting Files */,
+			);
+			path = Emelem;
+			sourceTree = "<group>";
+		};
+		02D9CA4F1AF838330087175F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				02D9CA501AF838330087175F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		02D9CA671AF838330087175F /* EmelemTests */ = {
+			isa = PBXGroup;
+			children = (
+				02D9CA6A1AF838330087175F /* EmelemTests.swift */,
+				02D9CA681AF838330087175F /* Supporting Files */,
+			);
+			path = EmelemTests;
+			sourceTree = "<group>";
+		};
+		02D9CA681AF838330087175F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				02D9CA691AF838330087175F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		02D9CA4B1AF838330087175F /* Emelem */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02D9CA6E1AF838330087175F /* Build configuration list for PBXNativeTarget "Emelem" */;
+			buildPhases = (
+				02D9CA481AF838330087175F /* Sources */,
+				02D9CA491AF838330087175F /* Frameworks */,
+				02D9CA4A1AF838330087175F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Emelem;
+			productName = Emelem;
+			productReference = 02D9CA4C1AF838330087175F /* Emelem.app */;
+			productType = "com.apple.product-type.application";
+		};
+		02D9CA631AF838330087175F /* EmelemTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02D9CA711AF838330087175F /* Build configuration list for PBXNativeTarget "EmelemTests" */;
+			buildPhases = (
+				02D9CA601AF838330087175F /* Sources */,
+				02D9CA611AF838330087175F /* Frameworks */,
+				02D9CA621AF838330087175F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				02D9CA661AF838330087175F /* PBXTargetDependency */,
+			);
+			name = EmelemTests;
+			productName = EmelemTests;
+			productReference = 02D9CA641AF838330087175F /* EmelemTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		02D9CA441AF838330087175F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Jared Mermey";
+				TargetAttributes = {
+					02D9CA4B1AF838330087175F = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					02D9CA631AF838330087175F = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = 02D9CA4B1AF838330087175F;
+					};
+				};
+			};
+			buildConfigurationList = 02D9CA471AF838330087175F /* Build configuration list for PBXProject "Emelem" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 02D9CA431AF838330087175F;
+			productRefGroup = 02D9CA4D1AF838330087175F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				02D9CA4B1AF838330087175F /* Emelem */,
+				02D9CA631AF838330087175F /* EmelemTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		02D9CA4A1AF838330087175F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02D9CA5A1AF838330087175F /* Main.storyboard in Resources */,
+				02D9CA5F1AF838330087175F /* LaunchScreen.xib in Resources */,
+				02D9CA5C1AF838330087175F /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02D9CA621AF838330087175F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		02D9CA481AF838330087175F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02D9CA571AF838330087175F /* ViewController.swift in Sources */,
+				02D9CA551AF838330087175F /* Emelem.xcdatamodeld in Sources */,
+				02D9CA521AF838330087175F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02D9CA601AF838330087175F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02D9CA6B1AF838330087175F /* EmelemTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		02D9CA661AF838330087175F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 02D9CA4B1AF838330087175F /* Emelem */;
+			targetProxy = 02D9CA651AF838330087175F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		02D9CA581AF838330087175F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02D9CA591AF838330087175F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		02D9CA5D1AF838330087175F /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02D9CA5E1AF838330087175F /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		02D9CA6C1AF838330087175F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		02D9CA6D1AF838330087175F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		02D9CA6F1AF838330087175F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Emelem/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		02D9CA701AF838330087175F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Emelem/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		02D9CA721AF838330087175F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = EmelemTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Emelem.app/Emelem";
+			};
+			name = Debug;
+		};
+		02D9CA731AF838330087175F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = EmelemTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Emelem.app/Emelem";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		02D9CA471AF838330087175F /* Build configuration list for PBXProject "Emelem" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02D9CA6C1AF838330087175F /* Debug */,
+				02D9CA6D1AF838330087175F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		02D9CA6E1AF838330087175F /* Build configuration list for PBXNativeTarget "Emelem" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02D9CA6F1AF838330087175F /* Debug */,
+				02D9CA701AF838330087175F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		02D9CA711AF838330087175F /* Build configuration list for PBXNativeTarget "EmelemTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02D9CA721AF838330087175F /* Debug */,
+				02D9CA731AF838330087175F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		02D9CA531AF838330087175F /* Emelem.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				02D9CA541AF838330087175F /* Emelem.xcdatamodel */,
+			);
+			currentVersion = 02D9CA541AF838330087175F /* Emelem.xcdatamodel */;
+			path = Emelem.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 02D9CA441AF838330087175F /* Project object */;
+}
