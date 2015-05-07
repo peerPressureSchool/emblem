@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		028CF7161AF84D150028DA35 /* SwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028CF7151AF84D150028DA35 /* SwipeView.swift */; };
+		028CF7191AF8508A0028DA35 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028CF7181AF8508A0028DA35 /* CardsViewController.swift */; };
 		02D9CA521AF838330087175F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D9CA511AF838330087175F /* AppDelegate.swift */; };
 		02D9CA551AF838330087175F /* Emelem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02D9CA531AF838330087175F /* Emelem.xcdatamodeld */; };
 		02D9CA571AF838330087175F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D9CA561AF838330087175F /* ViewController.swift */; };
@@ -14,6 +16,7 @@
 		02D9CA5C1AF838330087175F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02D9CA5B1AF838330087175F /* Images.xcassets */; };
 		02D9CA5F1AF838330087175F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02D9CA5D1AF838330087175F /* LaunchScreen.xib */; };
 		02D9CA6B1AF838330087175F /* EmelemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D9CA6A1AF838330087175F /* EmelemTests.swift */; };
+		02D9CA761AF839AD0087175F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D9CA751AF839AD0087175F /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		028CF7151AF84D150028DA35 /* SwipeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeView.swift; sourceTree = "<group>"; };
+		028CF7181AF8508A0028DA35 /* CardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
 		02D9CA4C1AF838330087175F /* Emelem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Emelem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02D9CA501AF838330087175F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02D9CA511AF838330087175F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +43,7 @@
 		02D9CA641AF838330087175F /* EmelemTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmelemTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02D9CA691AF838330087175F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02D9CA6A1AF838330087175F /* EmelemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmelemTests.swift; sourceTree = "<group>"; };
+		02D9CA751AF839AD0087175F /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		028CF7171AF84FE40028DA35 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				02D9CA561AF838330087175F /* ViewController.swift */,
+				028CF7181AF8508A0028DA35 /* CardsViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		02D9CA431AF838330087175F = {
 			isa = PBXGroup;
 			children = (
@@ -80,7 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				02D9CA511AF838330087175F /* AppDelegate.swift */,
-				02D9CA561AF838330087175F /* ViewController.swift */,
+				02D9CA741AF839820087175F /* Views */,
+				028CF7171AF84FE40028DA35 /* ViewControllers */,
 				02D9CA581AF838330087175F /* Main.storyboard */,
 				02D9CA5B1AF838330087175F /* Images.xcassets */,
 				02D9CA5D1AF838330087175F /* LaunchScreen.xib */,
@@ -113,6 +129,15 @@
 				02D9CA691AF838330087175F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		02D9CA741AF839820087175F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				02D9CA751AF839AD0087175F /* CardView.swift */,
+				028CF7151AF84D150028DA35 /* SwipeView.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +242,9 @@
 			files = (
 				02D9CA571AF838330087175F /* ViewController.swift in Sources */,
 				02D9CA551AF838330087175F /* Emelem.xcdatamodeld in Sources */,
+				028CF7191AF8508A0028DA35 /* CardsViewController.swift in Sources */,
+				02D9CA761AF839AD0087175F /* CardView.swift in Sources */,
+				028CF7161AF84D150028DA35 /* SwipeView.swift in Sources */,
 				02D9CA521AF838330087175F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,6 +443,7 @@
 				02D9CA701AF838330087175F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		02D9CA711AF838330087175F /* Build configuration list for PBXNativeTarget "EmelemTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +452,7 @@
 				02D9CA731AF838330087175F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
