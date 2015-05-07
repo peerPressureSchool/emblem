@@ -9,6 +9,21 @@
 /* Begin PBXBuildFile section */
 		028CF7161AF84D150028DA35 /* SwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028CF7151AF84D150028DA35 /* SwipeView.swift */; };
 		028CF7191AF8508A0028DA35 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028CF7181AF8508A0028DA35 /* CardsViewController.swift */; };
+		028CF71D1AFAF6CA0028DA35 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028CF71B1AFAF6CA0028DA35 /* ParseFacebookUtilsV4.framework */; };
+		028CF71E1AFAF6CA0028DA35 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028CF71C1AFAF6CA0028DA35 /* Parse.framework */; };
+		028CF7201AFAF7230028DA35 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028CF71F1AFAF7230028DA35 /* AudioToolbox.framework */; };
+		028CF7221AFAF72C0028DA35 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028CF7211AFAF72C0028DA35 /* CFNetwork.framework */; };
+		028CF7241AFAF7350028DA35 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028CF7231AFAF7350028DA35 /* CoreGraphics.framework */; };
+		028CF7261AFAF73C0028DA35 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028CF7251AFAF73C0028DA35 /* CoreLocation.framework */; };
+		028CF7281AFAF7450028DA35 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028CF7271AFAF7450028DA35 /* MobileCoreServices.framework */; };
+		028CF72A1AFAF74E0028DA35 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028CF7291AFAF74E0028DA35 /* QuartzCore.framework */; };
+		028CF72C1AFAF7540028DA35 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028CF72B1AFAF7540028DA35 /* Security.framework */; };
+		028CF72E1AFAF75B0028DA35 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028CF72D1AFAF75B0028DA35 /* StoreKit.framework */; };
+		028CF7301AFAF7620028DA35 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028CF72F1AFAF7620028DA35 /* SystemConfiguration.framework */; };
+		028CF7321AFAF77A0028DA35 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 028CF7311AFAF77A0028DA35 /* libz.dylib */; };
+		028CF7341AFAF7870028DA35 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 028CF7331AFAF7870028DA35 /* libsqlite3.dylib */; };
+		028CF7361AFAF9190028DA35 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028CF7351AFAF9190028DA35 /* Accounts.framework */; };
+		028CF7381AFAF9210028DA35 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028CF7371AFAF9210028DA35 /* Social.framework */; };
 		02D9CA521AF838330087175F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D9CA511AF838330087175F /* AppDelegate.swift */; };
 		02D9CA551AF838330087175F /* Emelem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02D9CA531AF838330087175F /* Emelem.xcdatamodeld */; };
 		02D9CA571AF838330087175F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D9CA561AF838330087175F /* ViewController.swift */; };
@@ -17,6 +32,7 @@
 		02D9CA5F1AF838330087175F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02D9CA5D1AF838330087175F /* LaunchScreen.xib */; };
 		02D9CA6B1AF838330087175F /* EmelemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D9CA6A1AF838330087175F /* EmelemTests.swift */; };
 		02D9CA761AF839AD0087175F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D9CA751AF839AD0087175F /* CardView.swift */; };
+		3374F7DC469AE538DFCD828E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B923FBA3BC65BB5A91EAE8F3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +48,21 @@
 /* Begin PBXFileReference section */
 		028CF7151AF84D150028DA35 /* SwipeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeView.swift; sourceTree = "<group>"; };
 		028CF7181AF8508A0028DA35 /* CardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
+		028CF71B1AFAF6CA0028DA35 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
+		028CF71C1AFAF6CA0028DA35 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		028CF71F1AFAF7230028DA35 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		028CF7211AFAF72C0028DA35 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		028CF7231AFAF7350028DA35 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		028CF7251AFAF73C0028DA35 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		028CF7271AFAF7450028DA35 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		028CF7291AFAF74E0028DA35 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		028CF72B1AFAF7540028DA35 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		028CF72D1AFAF75B0028DA35 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		028CF72F1AFAF7620028DA35 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		028CF7311AFAF77A0028DA35 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		028CF7331AFAF7870028DA35 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		028CF7351AFAF9190028DA35 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		028CF7371AFAF9210028DA35 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		02D9CA4C1AF838330087175F /* Emelem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Emelem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02D9CA501AF838330087175F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02D9CA511AF838330087175F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +75,10 @@
 		02D9CA691AF838330087175F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02D9CA6A1AF838330087175F /* EmelemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmelemTests.swift; sourceTree = "<group>"; };
 		02D9CA751AF839AD0087175F /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		02E5E1121AFB135300DDB4BB /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		8F567C6A781F67152BF31551 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		AE78244EC26A4662676D4FD7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		B923FBA3BC65BB5A91EAE8F3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +86,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				028CF7381AFAF9210028DA35 /* Social.framework in Frameworks */,
+				028CF7361AFAF9190028DA35 /* Accounts.framework in Frameworks */,
+				028CF7341AFAF7870028DA35 /* libsqlite3.dylib in Frameworks */,
+				028CF7321AFAF77A0028DA35 /* libz.dylib in Frameworks */,
+				028CF7301AFAF7620028DA35 /* SystemConfiguration.framework in Frameworks */,
+				028CF72E1AFAF75B0028DA35 /* StoreKit.framework in Frameworks */,
+				028CF72C1AFAF7540028DA35 /* Security.framework in Frameworks */,
+				028CF72A1AFAF74E0028DA35 /* QuartzCore.framework in Frameworks */,
+				028CF7281AFAF7450028DA35 /* MobileCoreServices.framework in Frameworks */,
+				028CF7261AFAF73C0028DA35 /* CoreLocation.framework in Frameworks */,
+				028CF7241AFAF7350028DA35 /* CoreGraphics.framework in Frameworks */,
+				028CF7221AFAF72C0028DA35 /* CFNetwork.framework in Frameworks */,
+				028CF7201AFAF7230028DA35 /* AudioToolbox.framework in Frameworks */,
+				028CF71E1AFAF6CA0028DA35 /* Parse.framework in Frameworks */,
+				028CF71D1AFAF6CA0028DA35 /* ParseFacebookUtilsV4.framework in Frameworks */,
+				3374F7DC469AE538DFCD828E /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,12 +124,36 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
+		028CF71A1AFAF6910028DA35 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				028CF7371AFAF9210028DA35 /* Social.framework */,
+				028CF7351AFAF9190028DA35 /* Accounts.framework */,
+				028CF7331AFAF7870028DA35 /* libsqlite3.dylib */,
+				028CF7311AFAF77A0028DA35 /* libz.dylib */,
+				028CF72F1AFAF7620028DA35 /* SystemConfiguration.framework */,
+				028CF72D1AFAF75B0028DA35 /* StoreKit.framework */,
+				028CF72B1AFAF7540028DA35 /* Security.framework */,
+				028CF7291AFAF74E0028DA35 /* QuartzCore.framework */,
+				028CF7271AFAF7450028DA35 /* MobileCoreServices.framework */,
+				028CF7251AFAF73C0028DA35 /* CoreLocation.framework */,
+				028CF7231AFAF7350028DA35 /* CoreGraphics.framework */,
+				028CF7211AFAF72C0028DA35 /* CFNetwork.framework */,
+				028CF71F1AFAF7230028DA35 /* AudioToolbox.framework */,
+				028CF71B1AFAF6CA0028DA35 /* ParseFacebookUtilsV4.framework */,
+				028CF71C1AFAF6CA0028DA35 /* Parse.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		02D9CA431AF838330087175F = {
 			isa = PBXGroup;
 			children = (
 				02D9CA4E1AF838330087175F /* Emelem */,
 				02D9CA671AF838330087175F /* EmelemTests */,
 				02D9CA4D1AF838330087175F /* Products */,
+				70B03B48D05A219AAAF2F488 /* Pods */,
+				DC1D04BA15A971A2BDB1ED00 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +176,7 @@
 				02D9CA5B1AF838330087175F /* Images.xcassets */,
 				02D9CA5D1AF838330087175F /* LaunchScreen.xib */,
 				02D9CA531AF838330087175F /* Emelem.xcdatamodeld */,
+				028CF71A1AFAF6910028DA35 /* Frameworks */,
 				02D9CA4F1AF838330087175F /* Supporting Files */,
 			);
 			path = Emelem;
@@ -109,6 +185,7 @@
 		02D9CA4F1AF838330087175F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				02E5E1121AFB135300DDB4BB /* Bridging-Header.h */,
 				02D9CA501AF838330087175F /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -140,6 +217,23 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		70B03B48D05A219AAAF2F488 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8F567C6A781F67152BF31551 /* Pods.debug.xcconfig */,
+				AE78244EC26A4662676D4FD7 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DC1D04BA15A971A2BDB1ED00 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B923FBA3BC65BB5A91EAE8F3 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +241,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 02D9CA6E1AF838330087175F /* Build configuration list for PBXNativeTarget "Emelem" */;
 			buildPhases = (
+				9112660ACDFD6CAA91875B03 /* Check Pods Manifest.lock */,
 				02D9CA481AF838330087175F /* Sources */,
 				02D9CA491AF838330087175F /* Frameworks */,
 				02D9CA4A1AF838330087175F /* Resources */,
+				916B73C56324AF4D4B0514FC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -234,6 +330,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9112660ACDFD6CAA91875B03 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		916B73C56324AF4D4B0514FC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		02D9CA481AF838330087175F /* Sources */ = {
@@ -372,21 +501,33 @@
 		};
 		02D9CA6F1AF838330087175F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F567C6A781F67152BF31551 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Emelem",
+				);
 				INFOPLIST_FILE = Emelem/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Emelem/Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		02D9CA701AF838330087175F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE78244EC26A4662676D4FD7 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Emelem",
+				);
 				INFOPLIST_FILE = Emelem/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Emelem/Bridging-Header.h";
 			};
 			name = Release;
 		};
