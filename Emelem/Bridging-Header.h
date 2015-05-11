@@ -2,10 +2,10 @@
 //  Bridging-Header.h
 //  Emelem
 //
-//  Created by Jared Mermey on 5/6/15.
+//  Created by Jared Mermey on 5/7/15.
 //  Copyright (c) 2015 Jared Mermey. All rights reserved.
 //
 
-#import "FBSDKCoreKit/FBSDKCoreKit.h"
-#import "FBSDKLoginKit/FBSDKLoginKit.h"
-#import "FBSDKShareKit/FBSDKShareKit.h"
+#import <Parse/Parse.h>
+#import <ParseFacebookUtils/PFFacebookUtils.h>
+#import "FacebookSDK/FacebookSDK.h"
