@@ -16,8 +16,8 @@ class ProfileViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         navigationItem.titleView = UIImageView(image: UIImage(named: "profile-header"))
-        let rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "nav-back-button"), style: UIBarButtonItemStyle.Plain, target: self, action: "exitProfileVC:")
-        navigationItem.setRightBarButtonItem(rightBarButtonItem, animated: true)
+        let leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "nav-back-button"), style: UIBarButtonItemStyle.Plain, target: self, action: "exitProfileVC:")
+        navigationItem.setLeftBarButtonItem(leftBarButtonItem, animated: true)
     }
     
     override func viewDidLoad() {
@@ -40,7 +40,7 @@ class ProfileViewController: UIViewController {
     }
     
     func exitProfileVC(button: UIBarButtonItem){
-        
+        pageController.goToNextVC()
     }
 
 }
