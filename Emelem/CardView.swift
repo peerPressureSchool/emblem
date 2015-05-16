@@ -14,6 +14,7 @@ class CardView: UIView {
     //product Info
     private let productImageView: UIImageView = UIImageView()
     private let productNameLabel: UILabel = UILabel()
+    private let brandImageView: UIImageView = UIImageView()
     private let brandNameLabel: UILabel = UILabel()
     private let productPriceLabel: UILabel = UILabel()
     private let shipPriceLabel: UILabel = UILabel()
@@ -41,7 +42,6 @@ class CardView: UIView {
                 productImageView.image = productImage
             }
         }
-        
     }
     
     
@@ -68,11 +68,15 @@ class CardView: UIView {
         
         //everytime we create a CardView, we immediately create subviews of images and labels
         productImageView.setTranslatesAutoresizingMaskIntoConstraints(false)
-        productImageView.backgroundColor = UIColor.redColor()
+        productImageView.backgroundColor = UIColor.clearColor()
         addSubview(productImageView)
         
         productNameLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
         addSubview(productNameLabel)
+        
+        brandImageView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        brandImageView.backgroundColor = UIColor.clearColor()
+        addSubview(brandImageView)
         
         brandNameLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
         addSubview(brandNameLabel)
@@ -105,8 +109,6 @@ class CardView: UIView {
     
     
     private func setConstraints() {
-        
-        //CONSTRAINTS FOR PRODUCTIMAGEVIEW --> self = CardVie
         //how productImageView relates to CardView (i.e., "self") from top (i.e., y position)
         addConstraint(NSLayoutConstraint(item: productImageView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Top, multiplier: 1.0, constant: 0))
         //how productImageView relates to CardView from left (i.e., X position)
@@ -121,9 +123,5 @@ class CardView: UIView {
         addConstraint(NSLayoutConstraint(item: productNameLabel, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Leading, multiplier: 1.0, constant: 10))
         addConstraint(NSLayoutConstraint(item: productNameLabel, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Trailing, multiplier: 1.0, constant: -10))
         addConstraint(NSLayoutConstraint(item: productNameLabel, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Bottom, multiplier: 1.0, constant: -10))
-        
-        
-        
     }
-
 }
