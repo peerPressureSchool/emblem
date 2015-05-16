@@ -13,6 +13,7 @@ class CardsViewController: UIViewController, SwipeViewDelegate {
     struct Card {
         let cardView: CardView
         let swipeView: SwipeView
+        let product: Product
     }
     
     let frontCardTopMargin: CGFloat = 0
@@ -23,17 +24,27 @@ class CardsViewController: UIViewController, SwipeViewDelegate {
     var backCard: Card?
     var frontCard: Card?
     
+    var products: [Product]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         cardStackView.backgroundColor = UIColor.clearColor()
         
-        //user createCardFrame function to make back and front cards as instances of Card struc
-        backCard = createCard(backCardTopMargin)
-        cardStackView.addSubview(backCard!.swipeView)
-        frontCard = createCard(frontCardTopMargin)
-        cardStackView.addSubview(frontCard!.swipeView)
-
-        // Do any additional setup after loading the view.
+        fetchUnviewedProducts({
+            returnedProducts in
+            self.products = returnedProducts
+            
+            if let card = self.popCard() {
+                self.frontCard = card
+                self.cardStackView.addSubview(self.frontCard!.swipeView)
+            }
+            
+            if let card = self.popCard() {
+                self.backCard = card
+                self.backCard!.swipeView.frame = self.createCardFrame(self.backCardTopMargin)
+                self.cardStackView.insertSubview(self.backCard!.swipeView, belowSubview: self.frontCard!.swipeView)
+            }
+        })
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -54,12 +65,41 @@ class CardsViewController: UIViewController, SwipeViewDelegate {
     }
     
     //helper function create cards
-    private func createCard(topMargin: CGFloat) -> Card{
+    private func createCard(product: Product) -> Card{
         let cardView = CardView()
-        let swipeView = SwipeView(frame: createCardFrame(topMargin))
+        cardView.productName = product.productName
+        product.getProductPhoto({
+            productImage in
+            cardView.productImage = productImage
+        })
+        
+        let swipeView = SwipeView(frame: createCardFrame(0))
         swipeView.delegate = self
         swipeView.innerView = cardView
-        return Card(cardView: cardView, swipeView: swipeView)
+        return Card(cardView: cardView, swipeView: swipeView, product: product)
+    }
+    
+    //takes last Product in products array and sends it through createCard
+    private func popCard() -> Card? {
+        if products != nil && products?.count > 0 {
+            return createCard(products!.removeLast())
+        }
+        return nil
+    }
+    
+    //switch back card to front card
+    private func switchCards() {
+        if let card = backCard {
+            frontCard = card
+            UIView.animateWithDuration(0.2, animations: {
+            self.frontCard!.swipeView.frame = self.createCardFrame(self.frontCardTopMargin)
+            })
+        }
+        if let card = self.popCard() {
+            self.backCard = card
+            self.backCard!.swipeView.frame = self.createCardFrame(self.backCardTopMargin)
+            self.cardStackView.insertSubview(self.backCard!.swipeView, belowSubview: self.frontCard!.swipeView)
+        }
     }
     
     //navigation functions to go to other VC
@@ -74,6 +114,7 @@ class CardsViewController: UIViewController, SwipeViewDelegate {
         println("left")
         if let frontCard = frontCard {
             frontCard.swipeView.removeFromSuperview()
+            switchCards()
         }
     }
     
@@ -81,6 +122,7 @@ class CardsViewController: UIViewController, SwipeViewDelegate {
         println("right")
         if let frontCard = frontCard {
             frontCard.swipeView.removeFromSuperview()
+            switchCards()
         }
     }
 }

@@ -26,6 +26,25 @@ class CardView: UIView {
     //action icons (TBD)
     //ADD ACTION ICONS
     
+    
+    var productName: String? {
+        didSet{
+            if let productName = productName{
+                productNameLabel.text = productName
+            }
+        }
+    }
+    
+    var productImage: UIImage? {
+        didSet{
+            if let productImage = productImage{
+                productImageView.image = productImage
+            }
+        }
+        
+    }
+    
+    
     //initializers for CardView
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
