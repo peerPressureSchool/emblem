@@ -55,3 +55,19 @@ func fetchUnviewedProducts( callback: ([Product]) -> ()) {
         }
     })
 }
+
+func saveSkip(product: Product){
+    let skip = PFObject(className: "Action")
+    skip.setObject(PFUser.currentUser()!.objectId!, forKey: "byUser")
+    skip.setObject(product.sku, forKey: "productSku")
+    skip.setObject("skipped", forKey: "type")
+    skip.saveInBackgroundWithBlock(nil)
+}
+
+func saveKept(product: Product){
+    let skip = PFObject(className: "Action")
+    skip.setObject(PFUser.currentUser()!.objectId!, forKey: "byUser")
+    skip.setObject(product.sku, forKey: "productSku")
+    skip.setObject("kept", forKey: "type")
+    skip.saveInBackgroundWithBlock(nil)
+}
