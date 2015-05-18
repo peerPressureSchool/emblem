@@ -24,14 +24,41 @@ class CardView: UIView {
     private let referrerNameLabel: UILabel = UILabel()
     private let referrerCountLabel: UILabel = UILabel()
     
+    //buttons
+    private let chatButton: UIButton = UIButton()
+    private let shareButton: UIButton = UIButton()
+    private let mapButton: UIButton = UIButton()
+    private let infoButton: UIButton = UIButton()
+    
     //action icons (TBD)
     //ADD ACTION ICONS
     
     
     var productName: String? {
         didSet{
-            if let productName = productName{
+            if let productName = productName {
+                productNameLabel.font = UIFont.systemFontOfSize(20)
                 productNameLabel.text = productName
+            }
+        }
+    }
+    
+    var brandName: String? {
+        didSet{
+            if let brandName = brandName {
+                brandNameLabel.font = UIFont.systemFontOfSize(12)
+                brandNameLabel.text = brandName
+            }
+        }
+    }
+    
+    
+    var brandImage: UIImage? {
+        didSet{
+            if let brandImage = brandImage {
+                brandImageView.layer.masksToBounds = true
+                brandImageView.contentMode = .ScaleAspectFit
+                brandImageView.image = brandImage
             }
         }
     }
@@ -39,7 +66,28 @@ class CardView: UIView {
     var productImage: UIImage? {
         didSet{
             if let productImage = productImage{
+                productImageView.layer.masksToBounds = true
+                productImageView.contentMode = .ScaleAspectFit
                 productImageView.image = productImage
+            }
+        }
+    }
+    
+    var productPrice: Double? {
+        didSet{
+            if let productPrice = productPrice {
+                productNameLabel.font = UIFont.systemFontOfSize(20)
+                productPriceLabel.text = "$\(productPrice)"
+            }
+        }
+    }
+    
+    var shipPrice: Double? {
+        didSet{
+            if let shipPrice = shipPrice {
+                shipPriceLabel.font = UIFont.systemFontOfSize(12)
+                shipPriceLabel.textColor = UIColor.greenColor()
+                shipPriceLabel.text = "+$\(shipPrice) $&H"
             }
         }
     }
@@ -67,16 +115,16 @@ class CardView: UIView {
     private func initialize(){
         
         //everytime we create a CardView, we immediately create subviews of images and labels
+        brandImageView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        brandImageView.backgroundColor = UIColor.clearColor()
+        addSubview(brandImageView)
+        
         productImageView.setTranslatesAutoresizingMaskIntoConstraints(false)
         productImageView.backgroundColor = UIColor.clearColor()
         addSubview(productImageView)
         
         productNameLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
         addSubview(productNameLabel)
-        
-        brandImageView.setTranslatesAutoresizingMaskIntoConstraints(false)
-        brandImageView.backgroundColor = UIColor.clearColor()
-        addSubview(brandImageView)
         
         brandNameLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
         addSubview(brandNameLabel)
@@ -109,19 +157,43 @@ class CardView: UIView {
     
     
     private func setConstraints() {
-        //how productImageView relates to CardView (i.e., "self") from top (i.e., y position)
-        addConstraint(NSLayoutConstraint(item: productImageView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Top, multiplier: 1.0, constant: 0))
-        //how productImageView relates to CardView from left (i.e., X position)
-        addConstraint(NSLayoutConstraint(item: productImageView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Leading, multiplier: 1.0, constant: 0))
-        //how wide productImageView is
-        addConstraint(NSLayoutConstraint(item: productImageView, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Width, multiplier: 1.0, constant: 0))
-        //how tall productImageView is
-        addConstraint(NSLayoutConstraint(item: productImageView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Height, multiplier: 1.0, constant: 0))
         
-        //CONSTRAINTS FOR PRODUCTNAMELABEL
-        addConstraint(NSLayoutConstraint(item: productNameLabel, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: productImageView, attribute: NSLayoutAttribute.Bottom, multiplier: 1.0, constant: 0))
-        addConstraint(NSLayoutConstraint(item: productNameLabel, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Leading, multiplier: 1.0, constant: 10))
-        addConstraint(NSLayoutConstraint(item: productNameLabel, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Trailing, multiplier: 1.0, constant: -10))
-        addConstraint(NSLayoutConstraint(item: productNameLabel, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Bottom, multiplier: 1.0, constant: -10))
+        //brandAvatar
+        addConstraint(NSLayoutConstraint(item: brandImageView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Top, multiplier: 1.0, constant: 0))
+        addConstraint(NSLayoutConstraint(item: brandImageView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Leading, multiplier: 1.0, constant: 0))
+        brandImageView.frame.size.width = 50.0
+        brandImageView.frame.size.height = 50.0
+
+        
+        //productNameLabel
+        addConstraint(NSLayoutConstraint(item: productNameLabel, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Top, multiplier: 1.0, constant: 0))
+        addConstraint(NSLayoutConstraint(item: productNameLabel, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Leading, multiplier: 1.0, constant: 60))
+        productNameLabel.frame.size.width = 100.0
+        productNameLabel.frame.size.height = 25.0
+        
+        //brandNameLabel
+        addConstraint(NSLayoutConstraint(item: brandNameLabel, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Top, multiplier: 1.0, constant: 30.0))
+        addConstraint(NSLayoutConstraint(item: brandNameLabel, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Leading, multiplier: 1.0, constant: 60))
+        brandNameLabel.frame.size.width = 100.0
+        brandNameLabel.frame.size.height = 25.0
+        
+        //productImage
+        addConstraint(NSLayoutConstraint(item: productImageView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Top, multiplier: 1.0, constant: 95))
+        addConstraint(NSLayoutConstraint(item: productImageView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Leading, multiplier: 1.0, constant: 0))
+        addConstraint(NSLayoutConstraint(item: productImageView, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Width, multiplier: 1.0, constant: 0))
+        productImageView.frame.size.height = productImageView.frame.size.width
+        
+        //productPrice
+        addConstraint(NSLayoutConstraint(item: productPriceLabel, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Top, multiplier: 1.0, constant: 0))
+        addConstraint(NSLayoutConstraint(item: productPriceLabel, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Trailing, multiplier: 1.0, constant: 0))
+        productPriceLabel.frame.size.width = 30.0
+        productPriceLabel.frame.size.height = 25.0
+        
+        //shippingCost
+        addConstraint(NSLayoutConstraint(item: shipPriceLabel, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Top, multiplier: 1.0, constant: 30))
+        addConstraint(NSLayoutConstraint(item: shipPriceLabel, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Trailing, multiplier: 1.0, constant: 0))
+        shipPriceLabel.frame.size.width = 30.0
+        shipPriceLabel.frame.size.height = 25.0
+        
     }
 }

@@ -67,11 +67,22 @@ class CardsViewController: UIViewController, SwipeViewDelegate {
     //helper function create cards
     private func createCard(product: Product) -> Card{
         let cardView = CardView()
+       
         cardView.productName = product.productName
+        cardView.brandName = product.brandName
+        cardView.productPrice = product.price
+        cardView.shipPrice = product.shippingCost
+        
         product.getProductPhoto({
             productImage in
             cardView.productImage = productImage
         })
+       
+        product.getBrandPhoto({
+            brandImage in
+            cardView.brandImage = brandImage
+        })
+        
         
         let swipeView = SwipeView(frame: createCardFrame(0))
         swipeView.delegate = self

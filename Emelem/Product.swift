@@ -26,6 +26,17 @@ struct Product {
             }
         })
     }
+    
+    func getBrandPhoto(callback:(UIImage) -> () ){
+        let imageFile = product.objectForKey("brandImage") as! PFFile
+        imageFile.getDataInBackgroundWithBlock({
+            data, error in
+            if let data = data {
+                callback(UIImage(data:data)!)
+            }
+        })
+    }
+    
 }
 
 func productToProduct (product: PFObject) -> Product {
