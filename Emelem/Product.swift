@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MapKit
 
 struct Product {
     let productName: String
@@ -56,18 +57,33 @@ func fetchUnviewedProducts( callback: ([Product]) -> ()) {
     })
 }
 
+var tracking = GPSTrackingManager()
+
 func saveSkip(product: Product){
+    tracking.startTracking()
+    var latValue = tracking.locationManager.location.coordinate.longitude
+    var lonValue = tracking.locationManager.location.coordinate.latitude
+    let geoPoint = PFGeoPoint(latitude: latValue, longitude: lonValue)
+    
     let skip = PFObject(className: "Action")
     skip.setObject(PFUser.currentUser()!.objectId!, forKey: "byUser")
     skip.setObject(product.sku, forKey: "productSku")
     skip.setObject("skipped", forKey: "type")
+    skip.setObject(geoPoint, forKey: "swipeLocation")
     skip.saveInBackgroundWithBlock(nil)
 }
 
 func saveKept(product: Product){
+    tracking.startTracking()
+    var latValue = tracking.locationManager?.location.coordinate.longitude
+    var lonValue = tracking.locationManager?.location.coordinate.latitude
+    let geoPoint = PFGeoPoint(latitude: latValue!, longitude: lonValue!)
+
+    
     let skip = PFObject(className: "Action")
     skip.setObject(PFUser.currentUser()!.objectId!, forKey: "byUser")
     skip.setObject(product.sku, forKey: "productSku")
     skip.setObject("kept", forKey: "type")
+    skip.setObject(geoPoint, forKey: "swipeLocation")
     skip.saveInBackgroundWithBlock(nil)
 }

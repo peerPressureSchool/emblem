@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MapKit
 
-class CardsViewController: UIViewController, SwipeViewDelegate {
+class CardsViewController: UIViewController, SwipeViewDelegate, CLLocationManagerDelegate {
 
     struct Card {
         let cardView: CardView
@@ -26,8 +27,12 @@ class CardsViewController: UIViewController, SwipeViewDelegate {
     
     var products: [Product]?
     
+    var tracking = GPSTrackingManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tracking.startTracking()
+
         cardStackView.backgroundColor = UIColor.clearColor()
         
         fetchUnviewedProducts({
@@ -118,7 +123,6 @@ class CardsViewController: UIViewController, SwipeViewDelegate {
         pageController.goToPreviousVC()
     }
     
-    
     //SwipeViewDelegate functions
     
     func swipedLeft() {
@@ -138,4 +142,7 @@ class CardsViewController: UIViewController, SwipeViewDelegate {
             switchCards()
         }
     }
+    
+    
+    
 }

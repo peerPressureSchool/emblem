@@ -47,6 +47,12 @@
 			</array>
 		</dict>
 	</array>
+	<key>NSLocationUsageDescription</key>
+	<string>Emellem would like to use your location</string>
+	<key>NSLocationWhenInUsageDescription</key>
+	<string>Emellem would like to use your location</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Emellem would like to use your location</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

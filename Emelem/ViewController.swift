@@ -14,6 +14,7 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource {
 
     let cardsVC: UIViewController! = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CardsNavController") as! UIViewController
     let profileVC: UIViewController! = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ProfileNavController") as! UIViewController
+    let keptListVC: UIViewController! = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("KeptListNavController") as! UIViewController
     
     
     override func viewDidLoad() {
@@ -46,6 +47,7 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource {
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
             switch viewController {
+                case keptListVC: return cardsVC
                 case cardsVC: return profileVC
                 case profileVC: return nil
                 default: return nil
@@ -54,7 +56,8 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource {
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
             switch viewController {
-                case cardsVC: return nil
+                case keptListVC: return nil
+                case cardsVC: return keptListVC
                 case profileVC: return cardsVC
                 default: return nil
         }
