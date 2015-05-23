@@ -37,5 +37,8 @@ class ProductCell: UITableViewCell {
         referrerImageView.layer.masksToBounds = true
     }
     
+    @IBAction func chatButtonPressed(sender: UIButton) {
+        pageController.goToChatVC()
+    }
 
 }

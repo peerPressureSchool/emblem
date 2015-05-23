@@ -11,6 +11,7 @@
 		02759C9E1AFC3D7B0065A492 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02759C9D1AFC3D7B0065A492 /* LoginViewController.swift */; };
 		028CF7161AF84D150028DA35 /* SwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028CF7151AF84D150028DA35 /* SwipeView.swift */; };
 		028CF7191AF8508A0028DA35 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028CF7181AF8508A0028DA35 /* CardsViewController.swift */; };
+		02D5C51D1B0FC33E00B172AF /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D5C51C1B0FC33E00B172AF /* ChatViewController.swift */; };
 		02D9CA521AF838330087175F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D9CA511AF838330087175F /* AppDelegate.swift */; };
 		02D9CA551AF838330087175F /* Emelem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02D9CA531AF838330087175F /* Emelem.xcdatamodeld */; };
 		02D9CA571AF838330087175F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D9CA561AF838330087175F /* ViewController.swift */; };
@@ -58,6 +59,7 @@
 		02759C9D1AFC3D7B0065A492 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		028CF7151AF84D150028DA35 /* SwipeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeView.swift; sourceTree = "<group>"; };
 		028CF7181AF8508A0028DA35 /* CardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
+		02D5C51C1B0FC33E00B172AF /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		02D9CA4C1AF838330087175F /* Emelem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Emelem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02D9CA501AF838330087175F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02D9CA511AF838330087175F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				02F818861B0A9D68008C06EA /* MapViewController.swift */,
 				02F818821AFD81D9008C06EA /* ProfileViewController.swift */,
 				02F8188C1B0ACFB1008C06EA /* KeptListTableViewController.swift */,
+				02D5C51C1B0FC33E00B172AF /* ChatViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 			files = (
 				02F818871B0A9D68008C06EA /* MapViewController.swift in Sources */,
 				02759C9E1AFC3D7B0065A492 /* LoginViewController.swift in Sources */,
+				02D5C51D1B0FC33E00B172AF /* ChatViewController.swift in Sources */,
 				02D9CA571AF838330087175F /* ViewController.swift in Sources */,
 				02D9CA551AF838330087175F /* Emelem.xcdatamodeld in Sources */,
 				0235EC321B0D7B34002B8A0C /* Kept.swift in Sources */,

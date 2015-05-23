@@ -264,6 +264,9 @@
                                             <state key="normal" title="Button" image="ChatIcon">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="chatButtonPressed:" destination="ZD2-XW-Iog" eventType="touchUpInside" id="IL0-7G-nVT"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PCs-U9-ei5">
                                             <rect key="frame" x="214" y="185" width="30" height="30"/>
@@ -394,6 +397,25 @@
             </objects>
             <point key="canvasLocation" x="305" y="2334"/>
         </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="USV-9y-sS2">
+            <objects>
+                <viewController storyboardIdentifier="ChatViewController" id="gNe-iF-DGJ" customClass="ChatViewController" customModule="Emelem" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ovJ-Ed-uvM"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qds-Nf-eQO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7qb-f4-sMC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3Lw-ZZ-mZV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S6j-ST-mAH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="3034"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="62P-ZL-Etf">
             <objects>
@@ -489,6 +511,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gJC-IW-G37" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vHd-iX-BsL">
+            <objects>
+                <navigationController storyboardIdentifier="ChatViewNavController" automaticallyAdjustsScrollViewInsets="NO" id="4gO-vB-utZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="98D-2i-cEv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gNe-iF-DGJ" kind="relationship" relationship="rootViewController" id="58p-Gx-lxF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ErJ-m0-zKb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-416" y="3034"/>
         </scene>
     </scenes>
     <resources>
