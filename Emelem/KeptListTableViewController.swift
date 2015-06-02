@@ -12,6 +12,7 @@ class KeptListTableViewController: UITableViewController {
 
     var keptProducts: [KeptProduct] = []
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,6 +38,7 @@ class KeptListTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
     func goToProfile(button: UIBarButtonItem) {
         pageController.goToPreviousVC()
     }
@@ -68,6 +70,8 @@ class KeptListTableViewController: UITableViewController {
         cell.productPriceLabel.text = "$\(product.price)"
         cell.brandNameLabel.text = product.brandName
         cell.shipPriceLabel.text = "+ $\(product.shippingCost)S&H"
+        cell.chatButton.tag = indexPath.row
+        
         
         return cell
     }
@@ -75,5 +79,15 @@ class KeptListTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "chatVCSegue" {
+            let chatVC: ChatViewController = segue.destinationViewController as! ChatViewController
+            let keptProduct = self.keptProducts[sender!.tag]
+            chatVC.keptProductSKU = keptProduct.sku
+            chatVC.title = keptProduct.product.productName
+        }
     }
 }

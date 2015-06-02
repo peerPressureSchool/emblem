@@ -19,6 +19,7 @@ class ProductCell: UITableViewCell {
     @IBOutlet weak var productPriceLabel: UILabel!
     @IBOutlet weak var shipPriceLabel: UILabel!
     
+    @IBOutlet weak var chatButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,8 +38,8 @@ class ProductCell: UITableViewCell {
         referrerImageView.layer.masksToBounds = true
     }
     
-    @IBAction func chatButtonPressed(sender: UIButton) {
-        pageController.goToChatVC()
-    }
+
+    
+
 
 }

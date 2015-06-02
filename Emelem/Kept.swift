@@ -38,9 +38,13 @@ func fetchKeptProducts( callback: ([KeptProduct]) -> ()){
                     var products = reverse(products)
                     var m = Array<KeptProduct>()
                     for (index, product) in enumerate(products){
-                        m.append(KeptProduct(sku: myKeptProducts[index].keptID, product: productToProduct(product)))
+                        m.append(KeptProduct(sku: myKeptProducts[index].productSKU, product: productToProduct(product)))
                     }
                     println(m)
+                    for i in m {
+                        let sku = i.sku
+                        println(sku)
+                    }
                     callback(m)
                 }
             })

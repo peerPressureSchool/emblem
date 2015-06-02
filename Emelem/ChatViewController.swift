@@ -12,6 +12,10 @@ class ChatViewController: JSQMessagesViewController  {
     //array of messages to show in collection view
     var messages: [JSQMessage] = []
     
+    var keptProductSKU: String?
+    
+    var messageListener: MessageListener?
+    
     //bubble design and colors
     let outgoingBubble = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImageWithColor(UIColor.jsq_messageBubbleBlueColor())
     let incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImageWithColor(UIColor.jsq_messageBubbleLightGrayColor())
@@ -22,6 +26,31 @@ class ChatViewController: JSQMessagesViewController  {
         
         collectionView.collectionViewLayout.incomingAvatarViewSize = CGSizeZero
         collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero
+        
+        if let sku = keptProductSKU {
+            fetchMessages(sku, {
+                messages in
+                
+                for m in messages {
+                    self.messages.append(JSQMessage(senderId: m.senderID, senderDisplayName: m.senderID, date: m.date, text: m.message))
+                }
+                self.finishReceivingMessage()
+            })
+        }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        if let sku = keptProductSKU {
+            messageListener = MessageListener(keptProductSKU: sku, startDate: NSDate(), callback: {
+                message in
+                self.messages.append(JSQMessage(senderId: message.senderID, senderDisplayName: message.senderID, date: message.date, text: message.message))
+                self.finishReceivingMessage()
+            })
+        }
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        messageListener?.stop()
     }
     
     override var senderDisplayName: String! {
@@ -66,6 +95,12 @@ class ChatViewController: JSQMessagesViewController  {
     override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!) {
         let m = JSQMessage(senderId: senderId, senderDisplayName: senderDisplayName, date: date, text: text)
         self.messages.append(m)
+        println(keptProductSKU)
+        if let sku = keptProductSKU {
+            saveMessage(sku, Message(message: text, senderID: senderId, date: date))
+            println(sku)
+        }
+        
         finishSendingMessage()
     }
 }

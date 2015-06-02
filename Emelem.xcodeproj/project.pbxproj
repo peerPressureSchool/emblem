@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0235EC321B0D7B34002B8A0C /* Kept.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0235EC311B0D7B34002B8A0C /* Kept.swift */; };
 		02759C9E1AFC3D7B0065A492 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02759C9D1AFC3D7B0065A492 /* LoginViewController.swift */; };
+		027B6CE81B14077D00110516 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 027B6CE71B14077D00110516 /* libicucore.dylib */; };
+		027B6CEA1B14079C00110516 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 027B6CE91B14079C00110516 /* libc++.dylib */; };
+		027B6CEC1B1407ED00110516 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027B6CEB1B1407ED00110516 /* Message.swift */; };
 		028CF7161AF84D150028DA35 /* SwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028CF7151AF84D150028DA35 /* SwipeView.swift */; };
 		028CF7191AF8508A0028DA35 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028CF7181AF8508A0028DA35 /* CardsViewController.swift */; };
 		02D5C51D1B0FC33E00B172AF /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D5C51C1B0FC33E00B172AF /* ChatViewController.swift */; };
@@ -57,6 +60,9 @@
 /* Begin PBXFileReference section */
 		0235EC311B0D7B34002B8A0C /* Kept.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kept.swift; sourceTree = "<group>"; };
 		02759C9D1AFC3D7B0065A492 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		027B6CE71B14077D00110516 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		027B6CE91B14079C00110516 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		027B6CEB1B1407ED00110516 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		028CF7151AF84D150028DA35 /* SwipeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeView.swift; sourceTree = "<group>"; };
 		028CF7181AF8508A0028DA35 /* CardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
 		02D5C51C1B0FC33E00B172AF /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +110,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				027B6CEA1B14079C00110516 /* libc++.dylib in Frameworks */,
+				027B6CE81B14077D00110516 /* libicucore.dylib in Frameworks */,
 				02F818891B0A9E99008C06EA /* MapKit.framework in Frameworks */,
 				02E7347C1AFC2567001B5474 /* libsqlite3.dylib in Frameworks */,
 				02E7347A1AFC2554001B5474 /* libz.dylib in Frameworks */,
@@ -222,8 +230,11 @@
 		02E734621AFC245B001B5474 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				027B6CE91B14079C00110516 /* libc++.dylib */,
+				027B6CE71B14077D00110516 /* libicucore.dylib */,
 				02E7347B1AFC2567001B5474 /* libsqlite3.dylib */,
 				02E734791AFC2554001B5474 /* libz.dylib */,
+				02F818881B0A9E99008C06EA /* MapKit.framework */,
 				02E734771AFC2547001B5474 /* SystemConfiguration.framework */,
 				02E734751AFC2540001B5474 /* StoreKit.framework */,
 				02E734731AFC2538001B5474 /* Security.framework */,
@@ -245,6 +256,7 @@
 				02F818801AFD7814008C06EA /* User.swift */,
 				0235EC311B0D7B34002B8A0C /* Kept.swift */,
 				02F8188A1B0AAACE008C06EA /* Location.swift */,
+				027B6CEB1B1407ED00110516 /* Message.swift */,
 				02F818841B054941008C06EA /* Product.swift */,
 			);
 			name = Data;
@@ -262,7 +274,6 @@
 		B86CDDEB08098D3B4C8C27BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				02F818881B0A9E99008C06EA /* MapKit.framework */,
 				6A7E9C89E28EAEAD11D3402C /* libPods.a */,
 			);
 			name = Frameworks;
@@ -406,6 +417,7 @@
 				02F818871B0A9D68008C06EA /* MapViewController.swift in Sources */,
 				02759C9E1AFC3D7B0065A492 /* LoginViewController.swift in Sources */,
 				02D5C51D1B0FC33E00B172AF /* ChatViewController.swift in Sources */,
+				027B6CEC1B1407ED00110516 /* Message.swift in Sources */,
 				02D9CA571AF838330087175F /* ViewController.swift in Sources */,
 				02D9CA551AF838330087175F /* Emelem.xcdatamodeld in Sources */,
 				0235EC321B0D7B34002B8A0C /* Kept.swift in Sources */,
