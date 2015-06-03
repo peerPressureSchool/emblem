@@ -25,6 +25,7 @@ class KeptListTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         let leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "profile-button"), style: UIBarButtonItemStyle.Plain, target: self, action: "goToProfile:")
         navigationItem.setLeftBarButtonItem(leftBarButtonItem, animated: true)
+        navigationItem.title = currentUser()?.fullName
         
         fetchKeptProducts({
             keptProducts in
