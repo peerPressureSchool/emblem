@@ -15,7 +15,9 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource {
     let cardsVC: UIViewController! = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CardsNavController") as! UIViewController
     let profileVC: UIViewController! = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ProfileNavController") as! UIViewController
     let keptListVC: UIViewController! = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("KeptListNavController") as! UIViewController
-    //let chatVC : UIViewController! = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ChatViewNavController") as! UIViewController
+    let networkKeptListVC: UIViewController! = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("NetworkKeptListNavController") as! UIViewController
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +54,8 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource {
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
             switch viewController {
-                case keptListVC: return cardsVC
+                case keptListVC: return networkKeptListVC
+                case networkKeptListVC: return cardsVC
                 case cardsVC: return profileVC
                 case profileVC: return nil
                 default: return nil
@@ -62,12 +65,11 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource {
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
             switch viewController {
                 case keptListVC: return nil
-                case cardsVC: return keptListVC
+                case networkKeptListVC: return keptListVC
+                case cardsVC: return networkKeptListVC
                 case profileVC: return cardsVC
                 default: return nil
         }
-
     }
-
 }
 

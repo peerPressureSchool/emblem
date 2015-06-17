@@ -58,7 +58,7 @@ private func snapshotToMessage(snapshot: FDataSnapshot) -> Message {
 
 func fetchMessages(keptProductSKU: String, callback: ([Message]) -> ()) {
     
-    ref.childByAppendingPath(keptProductSKU).queryLimitedToFirst(25).observeEventType(FEventType.Value, withBlock: {
+    ref.childByAppendingPath(keptProductSKU).queryLimitedToFirst(25).observeSingleEventOfType(FEventType.Value, withBlock: {
         snapshot in
         
         var messages = Array<Message>()
@@ -66,9 +66,8 @@ func fetchMessages(keptProductSKU: String, callback: ([Message]) -> ()) {
         
         while let data = enumerator.nextObject() as? FDataSnapshot {
             messages.append(snapshotToMessage(data))
-            callback(messages)
         }
-        
+            callback(messages)
     })
     
 }

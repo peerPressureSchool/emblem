@@ -7,7 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		020B3F251B1FD36C00B0AD6E /* NetworkKeptProductTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020B3F241B1FD36C00B0AD6E /* NetworkKeptProductTableViewController.swift */; };
+		020B3F271B1FD4B200B0AD6E /* NetworkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020B3F261B1FD4B200B0AD6E /* NetworkCell.swift */; };
+		0220BB4F1B225B2900393BBC /* NetworkKept.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0220BB4E1B225B2800393BBC /* NetworkKept.swift */; };
+		0220BB551B27EBF500393BBC /* ShippingAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0220BB541B27EBF500393BBC /* ShippingAddress.swift */; };
 		0235EC321B0D7B34002B8A0C /* Kept.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0235EC311B0D7B34002B8A0C /* Kept.swift */; };
+		026809821B2924D10006C43B /* ShippingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026809811B2924D10006C43B /* ShippingTableViewController.swift */; };
+		026809841B2924ED0006C43B /* ShippingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026809831B2924ED0006C43B /* ShippingCell.swift */; };
+		026809861B29AD830006C43B /* ShipAddDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026809851B29AD830006C43B /* ShipAddDetailViewController.swift */; };
 		02759C9E1AFC3D7B0065A492 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02759C9D1AFC3D7B0065A492 /* LoginViewController.swift */; };
 		027B6CE81B14077D00110516 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 027B6CE71B14077D00110516 /* libicucore.dylib */; };
 		027B6CEA1B14079C00110516 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 027B6CE91B14079C00110516 /* libc++.dylib */; };
@@ -58,7 +65,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		020B3F241B1FD36C00B0AD6E /* NetworkKeptProductTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkKeptProductTableViewController.swift; sourceTree = "<group>"; };
+		020B3F261B1FD4B200B0AD6E /* NetworkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkCell.swift; sourceTree = "<group>"; };
+		0220BB4E1B225B2800393BBC /* NetworkKept.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkKept.swift; sourceTree = "<group>"; };
+		0220BB541B27EBF500393BBC /* ShippingAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShippingAddress.swift; sourceTree = "<group>"; };
 		0235EC311B0D7B34002B8A0C /* Kept.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kept.swift; sourceTree = "<group>"; };
+		026809811B2924D10006C43B /* ShippingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShippingTableViewController.swift; sourceTree = "<group>"; };
+		026809831B2924ED0006C43B /* ShippingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShippingCell.swift; sourceTree = "<group>"; };
+		026809851B29AD830006C43B /* ShipAddDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShipAddDetailViewController.swift; sourceTree = "<group>"; };
 		02759C9D1AFC3D7B0065A492 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		027B6CE71B14077D00110516 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		027B6CE91B14079C00110516 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
@@ -146,9 +160,12 @@
 				02D9CA561AF838330087175F /* ViewController.swift */,
 				02759C9D1AFC3D7B0065A492 /* LoginViewController.swift */,
 				028CF7181AF8508A0028DA35 /* CardsViewController.swift */,
-				02F818861B0A9D68008C06EA /* MapViewController.swift */,
 				02F818821AFD81D9008C06EA /* ProfileViewController.swift */,
+				026809811B2924D10006C43B /* ShippingTableViewController.swift */,
+				026809851B29AD830006C43B /* ShipAddDetailViewController.swift */,
 				02F8188C1B0ACFB1008C06EA /* KeptListTableViewController.swift */,
+				020B3F241B1FD36C00B0AD6E /* NetworkKeptProductTableViewController.swift */,
+				02F818861B0A9D68008C06EA /* MapViewController.swift */,
 				02D5C51C1B0FC33E00B172AF /* ChatViewController.swift */,
 			);
 			name = ViewControllers;
@@ -223,6 +240,8 @@
 				02D9CA751AF839AD0087175F /* CardView.swift */,
 				028CF7151AF84D150028DA35 /* SwipeView.swift */,
 				02F8188E1B0ADB4F008C06EA /* ProductCell.swift */,
+				020B3F261B1FD4B200B0AD6E /* NetworkCell.swift */,
+				026809831B2924ED0006C43B /* ShippingCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -258,6 +277,8 @@
 				02F8188A1B0AAACE008C06EA /* Location.swift */,
 				027B6CEB1B1407ED00110516 /* Message.swift */,
 				02F818841B054941008C06EA /* Product.swift */,
+				0220BB4E1B225B2800393BBC /* NetworkKept.swift */,
+				0220BB541B27EBF500393BBC /* ShippingAddress.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -414,23 +435,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				020B3F251B1FD36C00B0AD6E /* NetworkKeptProductTableViewController.swift in Sources */,
 				02F818871B0A9D68008C06EA /* MapViewController.swift in Sources */,
 				02759C9E1AFC3D7B0065A492 /* LoginViewController.swift in Sources */,
 				02D5C51D1B0FC33E00B172AF /* ChatViewController.swift in Sources */,
 				027B6CEC1B1407ED00110516 /* Message.swift in Sources */,
 				02D9CA571AF838330087175F /* ViewController.swift in Sources */,
+				020B3F271B1FD4B200B0AD6E /* NetworkCell.swift in Sources */,
 				02D9CA551AF838330087175F /* Emelem.xcdatamodeld in Sources */,
 				0235EC321B0D7B34002B8A0C /* Kept.swift in Sources */,
+				026809861B29AD830006C43B /* ShipAddDetailViewController.swift in Sources */,
+				026809841B2924ED0006C43B /* ShippingCell.swift in Sources */,
 				028CF7191AF8508A0028DA35 /* CardsViewController.swift in Sources */,
 				02F8188F1B0ADB4F008C06EA /* ProductCell.swift in Sources */,
 				02F818811AFD7814008C06EA /* User.swift in Sources */,
 				02D9CA761AF839AD0087175F /* CardView.swift in Sources */,
 				02F8188D1B0ACFB1008C06EA /* KeptListTableViewController.swift in Sources */,
+				0220BB4F1B225B2900393BBC /* NetworkKept.swift in Sources */,
 				02F818831AFD81D9008C06EA /* ProfileViewController.swift in Sources */,
 				02F818851B054941008C06EA /* Product.swift in Sources */,
+				026809821B2924D10006C43B /* ShippingTableViewController.swift in Sources */,
 				028CF7161AF84D150028DA35 /* SwipeView.swift in Sources */,
 				02F8188B1B0AAACE008C06EA /* Location.swift in Sources */,
 				02D9CA521AF838330087175F /* AppDelegate.swift in Sources */,
+				0220BB551B27EBF500393BBC /* ShippingAddress.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

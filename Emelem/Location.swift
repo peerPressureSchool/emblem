@@ -35,6 +35,7 @@ class GPSTrackingManager: NSObject, CLLocationManagerDelegate {
         }
     }
     
+    
     func locationManager(manager:CLLocationManager, didUpdateLocations locations:[AnyObject]) {
         //println("locations = \(locationManager)")
 //        var latValue = locationManager.location.coordinate.latitude

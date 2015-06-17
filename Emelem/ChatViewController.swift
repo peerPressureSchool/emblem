@@ -94,13 +94,11 @@ class ChatViewController: JSQMessagesViewController  {
     
     override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!) {
         let m = JSQMessage(senderId: senderId, senderDisplayName: senderDisplayName, date: date, text: text)
-        self.messages.append(m)
-        println(keptProductSKU)
+        //self.messages.append(m)
+        
         if let sku = keptProductSKU {
             saveMessage(sku, Message(message: text, senderID: senderId, date: date))
-            println(sku)
         }
-        
         finishSendingMessage()
     }
 }

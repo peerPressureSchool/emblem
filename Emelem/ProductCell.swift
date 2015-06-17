@@ -23,6 +23,7 @@ class ProductCell: UITableViewCell {
     
     @IBOutlet weak var chatButton: UIButton!
     @IBOutlet weak var buyButton: UIButton!
+    @IBOutlet weak var mapButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -58,8 +59,4 @@ class ProductCell: UITableViewCell {
         self.buyButton.layer.borderWidth = 1.5
     }
     
-
-    
-
-
 }

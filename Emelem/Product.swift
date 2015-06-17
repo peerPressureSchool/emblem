@@ -80,10 +80,10 @@ func saveKept(product: Product){
     let geoPoint = PFGeoPoint(latitude: latValue!, longitude: lonValue!)
 
     
-    let skip = PFObject(className: "Action")
-    skip.setObject(PFUser.currentUser()!.objectId!, forKey: "byUser")
-    skip.setObject(product.sku, forKey: "productSku")
-    skip.setObject("kept", forKey: "type")
-    skip.setObject(geoPoint, forKey: "swipeLocation")
-    skip.saveInBackgroundWithBlock(nil)
+    let save = PFObject(className: "Action")
+    save.setObject(PFUser.currentUser()!.objectId!, forKey: "byUser")
+    save.setObject(product.sku, forKey: "productSku")
+    save.setObject("kept", forKey: "type")
+    save.setObject(geoPoint, forKey: "swipeLocation")
+    save.saveInBackgroundWithBlock(nil)
 }
