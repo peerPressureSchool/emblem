@@ -27,8 +27,8 @@ class NetworkKeptProductTableViewController: UITableViewController {
         navigationItem.title = "Your Network"
         
         fetchNetworkKeptProducts({
-            networkKeptProducts in
-            self.networkKeptProducts = networkKeptProducts
+            returnedNetworkKeptProducts in
+            self.networkKeptProducts = returnedNetworkKeptProducts
             self.tableView.reloadData()
         })
         
@@ -72,16 +72,32 @@ class NetworkKeptProductTableViewController: UITableViewController {
             let cell: NetworkCell = tableView.dequeueReusableCellWithIdentifier("NetworkCell", forIndexPath: indexPath) as! NetworkCell
             return cell
         } else {
-            let cell2: ProductCell = tableView.dequeueReusableCellWithIdentifier("NetProductCell", forIndexPath: indexPath) as! ProductCell
+            
+            
+            let cell2 = tableView.dequeueReusableCellWithIdentifier("ProductCell2", forIndexPath: indexPath) as! ProductCell2
+            
             let product = networkKeptProducts[indexPath.row].product
+            println(product)
+            
             cell2.productNameLabel.text = product.productName
+            product.getProductPhoto({
+                productImage in
+                cell2.productImageView.image = productImage
+            })
+            cell2.productPriceLabel.text = "$\(product.price)"
+            cell2.brandNameLabel.text = product.brandName
+            cell2.shipPriceLabel.text = "+ $\(product.shippingCost)S&H"
+            cell2.chatButton.tag = indexPath.row
+            cell2.mapButton.tag = indexPath.row
+            
+            
             return cell2
         }
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    /*override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-    }
+    }*/
 
 
 }

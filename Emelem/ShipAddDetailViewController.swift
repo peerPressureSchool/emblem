@@ -18,14 +18,32 @@ class ShipAddDetailViewController: UIViewController {
     @IBOutlet weak var stateTextField: UITextField!
     @IBOutlet weak var zipTextField: UITextField!
 
-    var address: ShippingAddress?
-    
+    var addressId: String?
+    var addresses: [Address] = []
     
     override func viewDidLoad() {
-        super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        super.viewDidLoad()
+               // Do any additional setup after loading the view.
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        self.addressId = appDelegate.editAddressId!
+        
+        fetchAddressesbyId(self.addressId!, {
+            returnedAddresses in
+            self.addresses = returnedAddresses
+            
+            self.addressTitleTextField.text = self.addresses[0].addressTitle
+            self.streetAddTextField.text = self.addresses[0].streetAddress
+            self.aptTextField.text = self.addresses[0].apt
+            self.cityTextField.text = self.addresses[0].city
+            self.stateTextField.text = self.addresses[0].state
+            self.zipTextField.text = self.addresses[0].zip
+        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,33 +51,28 @@ class ShipAddDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    @IBAction func savebuttonPressed(sender: UIButton) {
+    @IBAction func saveButtonPressed(sender: UIBarButtonItem) {
         //call save address function
-        var addressTitle = addressTitleTextField.text
-        var streetAddress = streetAddTextField.text
-        var aptNo = aptTextField.text
-        var city = cityTextField.text
-        var state = stateTextField.text
-        var zip = zipTextField.text
+     
         
-       
+        var addressTitle = self.addressTitleTextField.text
+        var streetAddress = self.streetAddTextField.text
+        var aptNo = self.aptTextField.text
+        var city = self.cityTextField.text
+        var state = self.stateTextField.text
+        var zip = self.zipTextField.text
         
+
+        var addressID =  addresses[0].addressId as String
+        streetAddTextField.text = addresses[0].streetAddress as String
+        aptTextField.text = addresses[0].apt as String
+        cityTextField.text = addresses[0].city as String
+        stateTextField.text = addresses[0].state as String
+        zipTextField.text = addresses[0].zip as String
         
+        println(addresses[0].apt)
+        //saveAddress(addresses[0])
         
-//        streetAddTextField.text = address!.streetAddress as String
-//        println(address?.streetAddress)
-//        aptTextField.text = address!.apt as String
-//        println(address?.apt)
-//        cityTextField.text = address!.city as String
-//        println(address?.city)
-//        stateTextField.text = address!.state as String
-//        println(address?.state)
-//        zipTextField.text = address!.zip as String
-//        saveAddress(address!)
     }
-    
-    
-    
  
 }

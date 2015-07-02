@@ -94,7 +94,6 @@ class ProfileViewController: UIViewController {
             .whereKey("type", equalTo: "follow")
             .findObjectsInBackgroundWithBlock({
                 objects, error in
-                println(objects)
                 if let relationships = objects as? [PFObject] {
                     let myRelationships = relationships.map({
                         (object: PFObject)->(relationshipID: String, followingID:String)

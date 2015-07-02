@@ -10,7 +10,9 @@ import UIKit
 
 class ShippingTableViewController: UITableViewController {
 
-    var shippingAddresses: [ShippingAddress] = []
+    //var shippingAddresses: [ShippingAddress] = []
+    var addresses: [Address] = []
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,11 +21,19 @@ class ShippingTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        fetchUserAddresses({
+        fetchAddresses({
+            returnedAddresses in
+            self.addresses = returnedAddresses
+            //println(self.addresses)
+            self.tableView.reloadData()
+            }
+        )
+        
+        /*fetchUserAddresses({
             shippingAddresses in
             self.shippingAddresses = shippingAddresses
             self.tableView.reloadData()
-        })
+        })*/
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,24 +52,19 @@ class ShippingTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        //let cellCount = self.shippingAddresses.count + 1
-        return 1
+        return addresses.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ShippingCell", forIndexPath: indexPath) as! ShippingCell
         //let address = shippingAddresses[indexPath.row]
+        //let shippingAddress = addresses[indexPath.row]
         
         
-        cell.shippingAddTitleLabel.text = "Add a shipping address "
-        // Configure the cell...
-//        if (indexPath.row == shippingAddresses.count + 1) {
-//            
-//        } else {
-//         cell.shippingAddTitleLabel.text = address.addressName
-//        }
-
+        println(self.addresses[indexPath.row].addressId)
+        cell.shippingAddTitleLabel.text = self.addresses[indexPath.row].addressTitle
+        
         return cell
     }
 
@@ -68,16 +73,13 @@ class ShippingTableViewController: UITableViewController {
         //...write the code to go to the shipping address VC
         //look at how bitfountain does this in matches VC
         
-            let addDetailsVC = ShipAddDetailViewController()
+            //let addDetailsVC = ShipAddDetailViewController()
                 //navigationController?.pushViewController(addDetailsVC, animated: true)
-        
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            appDelegate.editAddressId = addresses[indexPath.row].addressId
             self.performSegueWithIdentifier("shipDetailVCSegue", sender: indexPath)
-        
-            if self.shippingAddresses.count > 0 {
-                addDetailsVC.address = shippingAddresses[indexPath.row]
-            }
-        
-            addDetailsVC.title = "Edit Your Address"
+            //addDetailsVC.title = "Edit Your Address"
+            //addDetailsVC.addressId = addresses[indexPath.row].addressId
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
     }

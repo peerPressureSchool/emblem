@@ -13,35 +13,35 @@ struct NetworkKeptProduct {
     let product: Product
 }
 
-var relatedUserIDs: [String] = []
+
 
 func fetchNetworkKeptProducts( callback: ([NetworkKeptProduct]) -> ()){
-    
-    //find relationships from CurrentUser
     PFQuery(className: "Relationship")
-        .whereKey("doer", equalTo: PFUser.currentUser()!.objectId!)
-        .whereKey("type", equalTo: "follow")
+    .whereKey("doer", equalTo: PFUser.currentUser()!.objectId!)
+    .whereKey("type", equalTo: "follow")
         .findObjectsInBackgroundWithBlock({
             objects, error in
-            if let relationships = objects as? [PFObject] {
-                println(relationships)
-                for relationship in relationships {
-                    let relatedUserID = relationship["recipient"] as! String
-                    relatedUserIDs.append(relatedUserID)
-                }
-            }
-        })
-    
+            println(objects)
+            if let relationships = objects as? [PFObject]{
+                let myRelationships = relationships.map({
+                    (object: PFObject)->(relationshipID: String, followerID:String)
+                    in
+                    (object.objectId! as String, object.objectForKey("recipient") as! String)
+                })
+                let followerIDs = myRelationships.map({$0.followerID})
+ 
+                
+           
     
     //first Query isolates products that have been kept from Action class into an array
     PFQuery(className: "Action")
-        .whereKey("byUser", containedIn: relatedUserIDs)
+        .whereKey("byUser", containedIn: followerIDs)
         .whereKey("type", equalTo: "kept")
         .findObjectsInBackgroundWithBlock({
             objects, error in
-            if let networkKeptProducts = objects as? [PFObject] {
-                let myNetworkKeptProducts = networkKeptProducts.map({
-                    (object: PFObject)->(keptID: String, productSKU:String)
+            if let networkkeptProducts = objects as? [PFObject] {
+                let myNetworkKeptProducts = networkkeptProducts.map({
+                    (object: PFObject)->(networkKeptID: String, productSKU:String)
                     in
                     (object.objectId! as String, object.objectForKey("productSku") as! String)
                 })
@@ -69,4 +69,9 @@ func fetchNetworkKeptProducts( callback: ([NetworkKeptProduct]) -> ()){
                     })
             }
         })
+    }
+})
+    
 }
+
+
