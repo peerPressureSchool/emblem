@@ -57,6 +57,18 @@ func fetchUnviewedProducts( callback: ([Product]) -> ()) {
     })
 }
 
+func fetchProductBySk(sku: String, callback: ([Product]) -> ()){
+    PFQuery(className: "Product")
+    .whereKey("sku", equalTo: sku)
+    .findObjectsInBackgroundWithBlock({
+        objects, error in
+        if let productsFromParse = objects as? [PFObject] {
+            let products = map(productsFromParse, {productToProduct($0)})
+            callback(products)
+        }
+    })
+}
+
 var tracking = GPSTrackingManager()
 
 func saveSkip(product: Product){

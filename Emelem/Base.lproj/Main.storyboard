@@ -674,6 +674,9 @@
                                             <state key="normal" title="Button" image="TagIcon">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <segue destination="1FF-S6-2gK" kind="show" identifier="detailsVCSegue" id="JMb-qc-85Y"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOQ-y7-0fp">
                                             <rect key="frame" x="540" y="8" width="52" height="21"/>
@@ -781,6 +784,7 @@
                                     <outlet property="brandNameLabel" destination="h1K-V0-WPJ" id="BTy-gv-hd9"/>
                                     <outlet property="buyButton" destination="mai-Xx-J78" id="ldZ-DN-YpQ"/>
                                     <outlet property="chatButton" destination="23q-PD-VrS" id="v6f-vu-v7t"/>
+                                    <outlet property="detailsButton" destination="tNI-vI-JIK" id="sYS-Mx-qrG"/>
                                     <outlet property="mapButton" destination="PCs-U9-ei5" id="JfS-Rw-OkR"/>
                                     <outlet property="productImageView" destination="cEO-iU-tCA" id="lOK-0B-PPJ"/>
                                     <outlet property="productNameLabel" destination="cIg-JA-7OQ" id="mOZ-gl-NAy"/>
@@ -804,10 +808,10 @@
             </objects>
             <point key="canvasLocation" x="141" y="3274"/>
         </scene>
-        <!--View Controller-->
+        <!--Product Detail View Controller-->
         <scene sceneID="75n-vQ-syo">
             <objects>
-                <viewController id="1FF-S6-2gK" sceneMemberID="viewController">
+                <viewController id="1FF-S6-2gK" customClass="ProductDetailViewController" customModule="Emelem" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zE4-Qb-ihq"/>
                         <viewControllerLayoutGuide type="bottom" id="9Tv-dO-MYh"/>
@@ -816,25 +820,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cgi-V6-WEU">
-                                <rect key="frame" x="0.0" y="28" width="615" height="400"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cgi-V6-WEU">
+                                <rect key="frame" x="0.0" y="29" width="615" height="400"/>
                             </imageView>
                             <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="3YV-Mb-Mio">
                                 <rect key="frame" x="288" y="391" width="39" height="37"/>
                             </pageControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Product Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WhY-uw-2AO">
-                                <rect key="frame" x="16" y="42" width="303" height="21"/>
+                                <rect key="frame" x="16" y="71" width="303" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t6f-lV-4UG">
-                                <rect key="frame" x="469" y="42" width="115" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shipping" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Amk-th-HXE">
                                 <rect key="frame" x="469" y="71" width="115" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -864,19 +862,45 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoe-GA-Tv5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoe-GA-Tv5">
                                 <rect key="frame" x="16" y="436" width="568" height="156"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DcO-3g-V2v">
+                                <rect key="frame" x="269" y="444" width="77" height="30"/>
+                                <state key="normal" title="Buy Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shipping" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Amk-th-HXE">
+                                <rect key="frame" x="469" y="100" width="115" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Cgi-V6-WEU" firstAttribute="leading" secondItem="Jgi-Z4-Cuv" secondAttribute="leadingMargin" constant="-16" id="2Za-P1-MdY"/>
+                            <constraint firstItem="Cgi-V6-WEU" firstAttribute="top" secondItem="zE4-Qb-ihq" secondAttribute="bottom" constant="-35" id="hZf-gl-p2Z"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Cgi-V6-WEU" secondAttribute="trailing" constant="-31" id="kVz-Oa-GLC"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buyButton" destination="DcO-3g-V2v" id="ueG-Vs-rwU"/>
+                        <outlet property="chatButton" destination="o6C-UB-Xcs" id="RiU-Pt-PAu"/>
+                        <outlet property="likeButton" destination="Tvf-pj-1Ai" id="c2O-43-lXl"/>
+                        <outlet property="mapButton" destination="O0Q-Pr-ztt" id="az8-5C-Sib"/>
+                        <outlet property="productDescription" destination="eoe-GA-Tv5" id="2OW-Zv-sBl"/>
+                        <outlet property="productImage" destination="Cgi-V6-WEU" id="oEf-IR-7yD"/>
+                        <outlet property="shareButton" destination="BHP-2b-90b" id="6aV-14-wk5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pSf-HX-aZs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1603" y="1926"/>
+            <point key="canvasLocation" x="1605" y="1984"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="USV-9y-sS2">

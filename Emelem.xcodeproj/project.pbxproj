@@ -22,6 +22,7 @@
 		028CF7161AF84D150028DA35 /* SwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028CF7151AF84D150028DA35 /* SwipeView.swift */; };
 		028CF7191AF8508A0028DA35 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028CF7181AF8508A0028DA35 /* CardsViewController.swift */; };
 		02C9746E1B3F5FA20019A046 /* ProductCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C9746D1B3F5FA20019A046 /* ProductCell2.swift */; };
+		02C974701B45EA8F0019A046 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C9746F1B45EA8F0019A046 /* ProductDetailViewController.swift */; };
 		02D5C51D1B0FC33E00B172AF /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D5C51C1B0FC33E00B172AF /* ChatViewController.swift */; };
 		02D9CA521AF838330087175F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D9CA511AF838330087175F /* AppDelegate.swift */; };
 		02D9CA551AF838330087175F /* Emelem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02D9CA531AF838330087175F /* Emelem.xcdatamodeld */; };
@@ -81,6 +82,7 @@
 		028CF7151AF84D150028DA35 /* SwipeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeView.swift; sourceTree = "<group>"; };
 		028CF7181AF8508A0028DA35 /* CardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
 		02C9746D1B3F5FA20019A046 /* ProductCell2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCell2.swift; sourceTree = "<group>"; };
+		02C9746F1B45EA8F0019A046 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		02D5C51C1B0FC33E00B172AF /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		02D9CA4C1AF838330087175F /* Emelem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Emelem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02D9CA501AF838330087175F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				020B3F241B1FD36C00B0AD6E /* NetworkKeptProductTableViewController.swift */,
 				02F818861B0A9D68008C06EA /* MapViewController.swift */,
 				02D5C51C1B0FC33E00B172AF /* ChatViewController.swift */,
+				02C9746F1B45EA8F0019A046 /* ProductDetailViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				02F818811AFD7814008C06EA /* User.swift in Sources */,
 				02D9CA761AF839AD0087175F /* CardView.swift in Sources */,
 				02F8188D1B0ACFB1008C06EA /* KeptListTableViewController.swift in Sources */,
+				02C974701B45EA8F0019A046 /* ProductDetailViewController.swift in Sources */,
 				0220BB4F1B225B2900393BBC /* NetworkKept.swift in Sources */,
 				02F818831AFD81D9008C06EA /* ProfileViewController.swift in Sources */,
 				02F818851B054941008C06EA /* Product.swift in Sources */,

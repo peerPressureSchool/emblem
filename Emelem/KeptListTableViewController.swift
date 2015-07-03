@@ -73,6 +73,7 @@ class KeptListTableViewController: UITableViewController {
         cell.shipPriceLabel.text = "+ $\(product.shippingCost)S&H"
         cell.chatButton.tag = indexPath.row
         cell.mapButton.tag = indexPath.row
+        cell.detailsButton.tag = indexPath.row
         
         return cell
     }
@@ -94,6 +95,11 @@ class KeptListTableViewController: UITableViewController {
             let keptProduct = self.keptProducts[sender!.tag]
             mapVC.keptProductSKU = keptProduct.sku
             mapVC.title = keptProduct.product.productName
+        } else if segue.identifier == "detailsVCSegue" {
+            let detailsVC: ProductDetailViewController = segue.destinationViewController as! ProductDetailViewController
+            let keptProduct = self.keptProducts[sender!.tag]
+            detailsVC.productSku = keptProduct.sku
+            detailsVC.title = keptProduct.product.productName
         }
     }
 }

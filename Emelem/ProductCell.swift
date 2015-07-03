@@ -24,6 +24,7 @@ class ProductCell: UITableViewCell {
     @IBOutlet weak var chatButton: UIButton!
     @IBOutlet weak var buyButton: UIButton!
     @IBOutlet weak var mapButton: UIButton!
+    @IBOutlet weak var detailsButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
