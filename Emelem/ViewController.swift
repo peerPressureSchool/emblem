@@ -16,6 +16,8 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource {
     let profileVC: UIViewController! = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ProfileNavController") as! UIViewController
     let keptListVC: UIViewController! = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("KeptListNavController") as! UIViewController
     let networkKeptListVC: UIViewController! = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("NetworkKeptListNavController") as! UIViewController
+    let peripheralsVC: UIViewController! = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("PersonalTableViewController") as! UIViewController
+
 
     
     
@@ -54,6 +56,7 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource {
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
             switch viewController {
+                case peripheralsVC : return keptListVC
                 case keptListVC: return networkKeptListVC
                 case networkKeptListVC: return cardsVC
                 case cardsVC: return profileVC
@@ -64,7 +67,8 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource {
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
             switch viewController {
-                case keptListVC: return nil
+                case peripheralsVC: return nil
+                case keptListVC: return peripheralsVC
                 case networkKeptListVC: return keptListVC
                 case cardsVC: return networkKeptListVC
                 case profileVC: return cardsVC

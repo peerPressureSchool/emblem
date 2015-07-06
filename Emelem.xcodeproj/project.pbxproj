@@ -23,6 +23,10 @@
 		028CF7191AF8508A0028DA35 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028CF7181AF8508A0028DA35 /* CardsViewController.swift */; };
 		02C9746E1B3F5FA20019A046 /* ProductCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C9746D1B3F5FA20019A046 /* ProductCell2.swift */; };
 		02C974701B45EA8F0019A046 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C9746F1B45EA8F0019A046 /* ProductDetailViewController.swift */; };
+		02C974721B46E1EE0019A046 /* PersonalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C974711B46E1EE0019A046 /* PersonalTableViewController.swift */; };
+		02C974741B46E27F0019A046 /* EditPersonalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C974731B46E27F0019A046 /* EditPersonalCell.swift */; };
+		02C974761B46E8510019A046 /* PeripheralsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C974751B46E8510019A046 /* PeripheralsCell.swift */; };
+		02C974781B46EF6E0019A046 /* ProductCell3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C974771B46EF6E0019A046 /* ProductCell3.swift */; };
 		02D5C51D1B0FC33E00B172AF /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D5C51C1B0FC33E00B172AF /* ChatViewController.swift */; };
 		02D9CA521AF838330087175F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D9CA511AF838330087175F /* AppDelegate.swift */; };
 		02D9CA551AF838330087175F /* Emelem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02D9CA531AF838330087175F /* Emelem.xcdatamodeld */; };
@@ -83,6 +87,10 @@
 		028CF7181AF8508A0028DA35 /* CardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
 		02C9746D1B3F5FA20019A046 /* ProductCell2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCell2.swift; sourceTree = "<group>"; };
 		02C9746F1B45EA8F0019A046 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		02C974711B46E1EE0019A046 /* PersonalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalTableViewController.swift; sourceTree = "<group>"; };
+		02C974731B46E27F0019A046 /* EditPersonalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPersonalCell.swift; sourceTree = "<group>"; };
+		02C974751B46E8510019A046 /* PeripheralsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeripheralsCell.swift; sourceTree = "<group>"; };
+		02C974771B46EF6E0019A046 /* ProductCell3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCell3.swift; sourceTree = "<group>"; };
 		02D5C51C1B0FC33E00B172AF /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		02D9CA4C1AF838330087175F /* Emelem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Emelem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02D9CA501AF838330087175F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -167,6 +175,7 @@
 				02F818821AFD81D9008C06EA /* ProfileViewController.swift */,
 				026809811B2924D10006C43B /* ShippingTableViewController.swift */,
 				026809851B29AD830006C43B /* ShipAddDetailViewController.swift */,
+				02C974711B46E1EE0019A046 /* PersonalTableViewController.swift */,
 				02F8188C1B0ACFB1008C06EA /* KeptListTableViewController.swift */,
 				020B3F241B1FD36C00B0AD6E /* NetworkKeptProductTableViewController.swift */,
 				02F818861B0A9D68008C06EA /* MapViewController.swift */,
@@ -244,6 +253,9 @@
 			children = (
 				02D9CA751AF839AD0087175F /* CardView.swift */,
 				028CF7151AF84D150028DA35 /* SwipeView.swift */,
+				02C974731B46E27F0019A046 /* EditPersonalCell.swift */,
+				02C974751B46E8510019A046 /* PeripheralsCell.swift */,
+				02C974771B46EF6E0019A046 /* ProductCell3.swift */,
 				02F8188E1B0ADB4F008C06EA /* ProductCell.swift */,
 				02C9746D1B3F5FA20019A046 /* ProductCell2.swift */,
 				020B3F261B1FD4B200B0AD6E /* NetworkCell.swift */,
@@ -448,9 +460,12 @@
 				027B6CEC1B1407ED00110516 /* Message.swift in Sources */,
 				02D9CA571AF838330087175F /* ViewController.swift in Sources */,
 				020B3F271B1FD4B200B0AD6E /* NetworkCell.swift in Sources */,
+				02C974761B46E8510019A046 /* PeripheralsCell.swift in Sources */,
 				02D9CA551AF838330087175F /* Emelem.xcdatamodeld in Sources */,
 				0235EC321B0D7B34002B8A0C /* Kept.swift in Sources */,
 				0253C7C71B38DA550014EB95 /* Address.swift in Sources */,
+				02C974781B46EF6E0019A046 /* ProductCell3.swift in Sources */,
+				02C974721B46E1EE0019A046 /* PersonalTableViewController.swift in Sources */,
 				026809861B29AD830006C43B /* ShipAddDetailViewController.swift in Sources */,
 				026809841B2924ED0006C43B /* ShippingCell.swift in Sources */,
 				028CF7191AF8508A0028DA35 /* CardsViewController.swift in Sources */,
@@ -467,6 +482,7 @@
 				028CF7161AF84D150028DA35 /* SwipeView.swift in Sources */,
 				02F8188B1B0AAACE008C06EA /* Location.swift in Sources */,
 				02D9CA521AF838330087175F /* AppDelegate.swift in Sources */,
+				02C974741B46E27F0019A046 /* EditPersonalCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
