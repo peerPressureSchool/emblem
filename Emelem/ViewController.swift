@@ -17,8 +17,8 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource {
     let keptListVC: UIViewController! = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("KeptListNavController") as! UIViewController
     let networkKeptListVC: UIViewController! = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("NetworkKeptListNavController") as! UIViewController
     let peripheralsVC: UIViewController! = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("PersonalTableViewController") as! UIViewController
-
-
+    let networkVC: UIViewController! = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("NetworkTableViewController") as! UIViewController
+    
     
     
     override func viewDidLoad() {
@@ -56,6 +56,7 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource {
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
             switch viewController {
+                case networkVC: return peripheralsVC
                 case peripheralsVC : return keptListVC
                 case keptListVC: return networkKeptListVC
                 case networkKeptListVC: return cardsVC
@@ -67,7 +68,8 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource {
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
             switch viewController {
-                case peripheralsVC: return nil
+                case networkVC: return nil
+                case peripheralsVC: return networkVC
                 case keptListVC: return peripheralsVC
                 case networkKeptListVC: return keptListVC
                 case cardsVC: return networkKeptListVC

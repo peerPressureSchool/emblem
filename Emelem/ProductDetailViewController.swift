@@ -8,19 +8,24 @@
 
 import UIKit
 
-class ProductDetailViewController: UIViewController {
+class ProductDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     var productSku: String?
     var product: [Product] = []
     
+    @IBOutlet weak var productNameLabel: UILabel!
+    @IBOutlet weak var brandNameLabel: UILabel!
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productDescription: UILabel!
+    @IBOutlet weak var price: UILabel!
+    @IBOutlet weak var shippingCost: UILabel!
     
     @IBOutlet weak var chatButton: UIButton!
     @IBOutlet weak var mapButton: UIButton!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
-    @IBOutlet weak var buyButton: UIButton!
+    
+    @IBOutlet weak var checkoutTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +46,10 @@ class ProductDetailViewController: UIViewController {
                 }
             )
             self.productDescription.text = self.product[0].productDescription
-    
+            self.price.text = "$\(self.product[0].price)"
+            self.shippingCost.text = "$\(self.product[0].shippingCost)"
+            self.productNameLabel.text = self.product[0].productName
+            self.brandNameLabel.text = self.product[0].brandName
             
         })
     }
@@ -52,14 +60,34 @@ class ProductDetailViewController: UIViewController {
     }
     
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
     }
-    */
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell: CheckoutCell = tableView.dequeueReusableCellWithIdentifier("CheckoutCell", forIndexPath: indexPath) as! CheckoutCell
+        
+        if indexPath == 0 {
+            cell.checkoutFieldLabel.text = "Size"
+            return cell
+        } else if indexPath == 1 {
+            cell.checkoutFieldLabel.text = "Color"
+            return cell
+        } else if indexPath == 2 {
+            cell.checkoutFieldLabel.text = "Address"
+            return cell
+        } else if indexPath == 3 {
+            cell.checkoutFieldLabel.text = "Card"
+            return cell
+        } else {
+            cell.checkoutFieldLabel.text = "Buy"
+            return cell
+        }
+    }
+    
+    /*
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        <#code#>
+    }*/
 
 }
