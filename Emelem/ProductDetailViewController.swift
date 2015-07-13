@@ -67,7 +67,30 @@ class ProductDetailViewController: UIViewController, UITableViewDataSource, UITa
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: CheckoutCell = tableView.dequeueReusableCellWithIdentifier("CheckoutCell", forIndexPath: indexPath) as! CheckoutCell
         
-        if indexPath == 0 {
+        
+        switch (indexPath.row) {
+            case 0:
+                cell.checkoutFieldLabel.text == "Size"
+                return cell
+            case 1:
+                cell.checkoutFieldLabel.text == "Color"
+                return cell
+            case 2:
+                cell.checkoutFieldLabel.text == "Address"
+                return cell
+            case 3:
+                cell.checkoutFieldLabel.text == "Card"
+                return cell
+            case 4:
+                cell.checkoutFieldLabel.text == "Buy"
+                return cell
+            default:
+                break;
+        }
+        
+        return cell
+        
+        /*if indexPath == 0 {
             cell.checkoutFieldLabel.text = "Size"
             return cell
         } else if indexPath == 1 {
@@ -82,9 +105,9 @@ class ProductDetailViewController: UIViewController, UITableViewDataSource, UITa
         } else {
             cell.checkoutFieldLabel.text = "Buy"
             return cell
-        }
+        }*/
     }
-    
+
     /*
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         <#code#>
