@@ -14,10 +14,7 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource {
 
     let cardsVC: UIViewController! = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CardsNavController") as! UIViewController
     let profileVC: UIViewController! = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ProfileNavController") as! UIViewController
-    let keptListVC: UIViewController! = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("KeptListNavController") as! UIViewController
-    let networkKeptListVC: UIViewController! = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("NetworkKeptListNavController") as! UIViewController
-    let peripheralsVC: UIViewController! = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("PersonalTableViewController") as! UIViewController
-    let networkVC: UIViewController! = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("NetworkTableViewController") as! UIViewController
+    let networkVC: UIViewController! = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("NetworkTableNavController") as! UIViewController
     
     
     
@@ -56,10 +53,7 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource {
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
             switch viewController {
-                case networkVC: return peripheralsVC
-                case peripheralsVC : return keptListVC
-                case keptListVC: return networkKeptListVC
-                case networkKeptListVC: return cardsVC
+                case networkVC: return cardsVC
                 case cardsVC: return profileVC
                 case profileVC: return nil
                 default: return nil
@@ -69,10 +63,7 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource {
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
             switch viewController {
                 case networkVC: return nil
-                case peripheralsVC: return networkVC
-                case keptListVC: return peripheralsVC
-                case networkKeptListVC: return keptListVC
-                case cardsVC: return networkKeptListVC
+                case cardsVC: return networkVC
                 case profileVC: return cardsVC
                 default: return nil
         }

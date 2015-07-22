@@ -10,7 +10,10 @@ import UIKit
 
 class NetworkTableViewController: UITableViewController {
     
+    var isFiltered = false
+    
     var networkKeptProducts: [NetworkKeptProduct] = []
+    var keptProducts: [KeptProduct] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,11 +29,20 @@ class NetworkTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         navigationItem.title = "Your Network"
         
-        fetchNetworkKeptProducts({
-            returnedNetworkKeptProducts in
-            self.networkKeptProducts = returnedNetworkKeptProducts
-            self.tableView.reloadData()
-        })
+        if isFiltered == false {
+            fetchNetworkKeptProducts({
+                returnedNetworkKeptProducts in
+                self.networkKeptProducts = returnedNetworkKeptProducts
+                self.tableView.reloadData()
+            })
+        } else {
+            fetchKeptProducts({
+                returnedKeptProducts in
+                self.keptProducts = returnedKeptProducts
+                self.tableView.reloadData()
+            })
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,106 +55,103 @@ class NetworkTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 3
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        if section == 0 {
-            return 1
-        } else if section == 1 {
-            return 1
-        } else {
+        if isFiltered == false {
             return networkKeptProducts.count
+        } else {
+            return keptProducts.count
         }
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
        
-        if indexPath.section == 0 {
-            let cell: SearchCell = tableView.dequeueReusableCellWithIdentifier("SearchCell", forIndexPath: indexPath) as! SearchCell
-            
-            return cell
-        } else if indexPath.section == 1 {
-            let cell2: BroadcastCell = tableView.dequeueReusableCellWithIdentifier("BroadcastCell", forIndexPath: indexPath) as! BroadcastCell
-            return cell2
-        } else {
-            let cell3: ProductCell4 = tableView.dequeueReusableCellWithIdentifier("ProductCell4", forIndexPath: indexPath) as! ProductCell4
-            
-            let product = networkKeptProducts[indexPath.row].product
-            println(product)
-            
-            cell3.productNameLabel.text = product.productName
-            product.getProductPhoto({
-                productImage in
-                cell3.productImageView.image = productImage
-            })
-            cell3.productPriceLabel.text = "$\(product.price)"
-            cell3.brandNameLabel.text = product.brandName
-            cell3.shipPriceLabel.text = "+ $\(product.shippingCost)S&H"
-            cell3.chatButton.tag = indexPath.row
-            cell3.mapButton.tag = indexPath.row
-            
-            return cell3
-        }
+            let cell: ProductCell4 = tableView.dequeueReusableCellWithIdentifier("ProductCell4", forIndexPath: indexPath) as! ProductCell4
+        
+            if isFiltered == false {
+                var product = networkKeptProducts[indexPath.row].product
+                cell.productNameLabel.text = product.productName
+                product.getProductPhoto({
+                    productImage in
+                    cell.productImageView.image = productImage
+                })
+                //cell.productPriceLabel.text = "$\(product.price)"
+                cell.brandNameLabel.text = product.brandName
+                //cell.shipPriceLabel.text = "+ $\(product.shippingCost)S&H"
+                cell.chatButton.tag = indexPath.row
+                cell.mapButton.tag = indexPath.row
+                return cell
+            } else {
+                var product = keptProducts[indexPath.row].product
+                cell.productNameLabel.text = product.productName
+                product.getProductPhoto({
+                    productImage in
+                    cell.productImageView.image = productImage
+                })
+                //cell.productPriceLabel.text = "$\(product.price)"
+                cell.brandNameLabel.text = product.brandName
+                //cell.shipPriceLabel.text = "+ $\(product.shippingCost)S&H"
+                cell.chatButton.tag = indexPath.row
+                cell.mapButton.tag = indexPath.row
+                return cell
+            }
     }
 
 
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if indexPath.section == 0 {
-            return 114
-        } else if indexPath.section == 1 {
-            return 86
-        } else {
             return 511
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "chatVCSegue" {
+            let chatVC: ChatViewController = segue.destinationViewController as! ChatViewController
+            let networkKeptProduct = self.networkKeptProducts[sender!.tag]
+            chatVC.keptProductSKU = networkKeptProduct.sku
+            chatVC.title = networkKeptProduct.product.productName
+        } else if segue.identifier == "mapVCSegue" {
+            let mapVC: MapViewController = segue.destinationViewController as! MapViewController
+            let networkKeptProduct = self.networkKeptProducts[sender!.tag]
+            mapVC.keptProductSKU = networkKeptProduct.sku
+            mapVC.title = networkKeptProduct.product.productName
+        } else if segue.identifier == "detailsVCSegue" {
+            let detailsVC: ProductDetailViewController = segue.destinationViewController as! ProductDetailViewController
+            let networkKeptProduct = self.networkKeptProducts[sender!.tag]
+            detailsVC.productSku = networkKeptProduct.sku
+            detailsVC.title = networkKeptProduct.product.productName
         }
     }
     
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
+    @IBAction func filterButtonPressed(sender: AnyObject) {
+        if isFiltered == false {
+            isFiltered = true
+            
+            fetchKeptProducts({
+                returnedKeptProducts in
+                self.keptProducts = returnedKeptProducts
+                self.tableView.reloadData()
+            })
+            
+            
+            println(isFiltered)
+        } else {
+            isFiltered = false
+            
+            fetchNetworkKeptProducts({
+                returnedNetworkKeptProducts in
+                self.networkKeptProducts = returnedNetworkKeptProducts
+                self.tableView.reloadData()
+            })
+            
+            println(isFiltered)
+        }
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+    
+    
 }

@@ -55,8 +55,6 @@ class CardsViewController: UIViewController, SwipeViewDelegate, CLLocationManage
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         navigationItem.titleView = UIImageView(image: UIImage(named: "nav-header"))
-        let leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "profile-button"), style: UIBarButtonItemStyle.Plain, target: self, action: "goToProfile:")
-        navigationItem.setLeftBarButtonItem(leftBarButtonItem, animated: true)
     }
 
     override func didReceiveMemoryWarning() {

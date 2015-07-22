@@ -46,10 +46,10 @@ class ProductCell4: UITableViewCell {
         self.referrerCountLabel.font = UIFont(name:"Helvetica-Light" , size: 13.0)
         
         self.productNameLabel.textColor = UIColor.cyanColor()
-        self.productNameLabel.font = UIFont(name: "Helvetica-Bold", size: 22.0)
-        self.productPriceLabel.font = UIFont(name: "Helvetica-Bold", size: 20.0)
-        self.brandNameLabel.font = UIFont(name: "Helvetica", size: 14.0)
-        self.shipPriceLabel.font = UIFont(name: "Helvetica", size: 14.0)
+        self.productNameLabel.font = UIFont(name: "Helvetica-Bold", size: 12.0)
+        //self.productPriceLabel.font = UIFont(name: "Helvetica-Bold", size: 20.0)
+        self.brandNameLabel.font = UIFont(name: "Helvetica", size: 10.0)
+        //self.shipPriceLabel.font = UIFont(name: "Helvetica", size: 14.0)
         
         self.productImageView.layer.borderColor = UIColor.grayColor().CGColor
         self.productImageView.layer.borderWidth = 1.5

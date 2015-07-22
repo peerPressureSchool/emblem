@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		020B3F251B1FD36C00B0AD6E /* NetworkKeptProductTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020B3F241B1FD36C00B0AD6E /* NetworkKeptProductTableViewController.swift */; };
-		020B3F271B1FD4B200B0AD6E /* NetworkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020B3F261B1FD4B200B0AD6E /* NetworkCell.swift */; };
 		0220BB4F1B225B2900393BBC /* NetworkKept.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0220BB4E1B225B2800393BBC /* NetworkKept.swift */; };
+		022F1F0F1B572717000223E3 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022F1F0E1B572717000223E3 /* ProfileTableViewController.swift */; };
+		022F1F111B572AC9000223E3 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022F1F101B572AC9000223E3 /* ProfileCell.swift */; };
 		0235EC321B0D7B34002B8A0C /* Kept.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0235EC311B0D7B34002B8A0C /* Kept.swift */; };
 		0253C7C71B38DA550014EB95 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0253C7C61B38DA550014EB95 /* Address.swift */; };
 		026809821B2924D10006C43B /* ShippingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026809811B2924D10006C43B /* ShippingTableViewController.swift */; };
@@ -19,19 +19,13 @@
 		027B6CE81B14077D00110516 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 027B6CE71B14077D00110516 /* libicucore.dylib */; };
 		027B6CEA1B14079C00110516 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 027B6CE91B14079C00110516 /* libc++.dylib */; };
 		027B6CEC1B1407ED00110516 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027B6CEB1B1407ED00110516 /* Message.swift */; };
+		028B44C21B5D6A6500C5B79C /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028B44C11B5D6A6500C5B79C /* SettingCell.swift */; };
 		028CF7161AF84D150028DA35 /* SwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028CF7151AF84D150028DA35 /* SwipeView.swift */; };
 		028CF7191AF8508A0028DA35 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028CF7181AF8508A0028DA35 /* CardsViewController.swift */; };
 		0295F2081B4C83ED0029F911 /* NetworkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0295F2071B4C83ED0029F911 /* NetworkTableViewController.swift */; };
 		0295F20A1B4C84F10029F911 /* ProductCell4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0295F2091B4C84F10029F911 /* ProductCell4.swift */; };
-		0295F20C1B4C8F370029F911 /* BroadcastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0295F20B1B4C8F370029F911 /* BroadcastCell.swift */; };
-		0295F20E1B4C91BF0029F911 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0295F20D1B4C91BF0029F911 /* SearchCell.swift */; };
 		0295F2101B4CBFBB0029F911 /* CheckoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0295F20F1B4CBFBB0029F911 /* CheckoutCell.swift */; };
-		02C9746E1B3F5FA20019A046 /* ProductCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C9746D1B3F5FA20019A046 /* ProductCell2.swift */; };
 		02C974701B45EA8F0019A046 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C9746F1B45EA8F0019A046 /* ProductDetailViewController.swift */; };
-		02C974721B46E1EE0019A046 /* PersonalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C974711B46E1EE0019A046 /* PersonalTableViewController.swift */; };
-		02C974741B46E27F0019A046 /* EditPersonalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C974731B46E27F0019A046 /* EditPersonalCell.swift */; };
-		02C974761B46E8510019A046 /* PeripheralsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C974751B46E8510019A046 /* PeripheralsCell.swift */; };
-		02C974781B46EF6E0019A046 /* ProductCell3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C974771B46EF6E0019A046 /* ProductCell3.swift */; };
 		02D5C51D1B0FC33E00B172AF /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D5C51C1B0FC33E00B172AF /* ChatViewController.swift */; };
 		02D9CA521AF838330087175F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D9CA511AF838330087175F /* AppDelegate.swift */; };
 		02D9CA551AF838330087175F /* Emelem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02D9CA531AF838330087175F /* Emelem.xcdatamodeld */; };
@@ -55,13 +49,10 @@
 		02E7347A1AFC2554001B5474 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 02E734791AFC2554001B5474 /* libz.dylib */; };
 		02E7347C1AFC2567001B5474 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 02E7347B1AFC2567001B5474 /* libsqlite3.dylib */; };
 		02F818811AFD7814008C06EA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F818801AFD7814008C06EA /* User.swift */; };
-		02F818831AFD81D9008C06EA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F818821AFD81D9008C06EA /* ProfileViewController.swift */; };
 		02F818851B054941008C06EA /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F818841B054941008C06EA /* Product.swift */; };
 		02F818871B0A9D68008C06EA /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F818861B0A9D68008C06EA /* MapViewController.swift */; };
 		02F818891B0A9E99008C06EA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02F818881B0A9E99008C06EA /* MapKit.framework */; };
 		02F8188B1B0AAACE008C06EA /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F8188A1B0AAACE008C06EA /* Location.swift */; };
-		02F8188D1B0ACFB1008C06EA /* KeptListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F8188C1B0ACFB1008C06EA /* KeptListTableViewController.swift */; };
-		02F8188F1B0ADB4F008C06EA /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F8188E1B0ADB4F008C06EA /* ProductCell.swift */; };
 		F4C086ABEE0855B434B66D6C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A7E9C89E28EAEAD11D3402C /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -76,9 +67,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		020B3F241B1FD36C00B0AD6E /* NetworkKeptProductTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkKeptProductTableViewController.swift; sourceTree = "<group>"; };
-		020B3F261B1FD4B200B0AD6E /* NetworkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkCell.swift; sourceTree = "<group>"; };
 		0220BB4E1B225B2800393BBC /* NetworkKept.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkKept.swift; sourceTree = "<group>"; };
+		022F1F0E1B572717000223E3 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		022F1F101B572AC9000223E3 /* ProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		0235EC311B0D7B34002B8A0C /* Kept.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kept.swift; sourceTree = "<group>"; };
 		0253C7C61B38DA550014EB95 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		026809811B2924D10006C43B /* ShippingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShippingTableViewController.swift; sourceTree = "<group>"; };
@@ -88,19 +79,13 @@
 		027B6CE71B14077D00110516 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		027B6CE91B14079C00110516 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		027B6CEB1B1407ED00110516 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		028B44C11B5D6A6500C5B79C /* SettingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		028CF7151AF84D150028DA35 /* SwipeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeView.swift; sourceTree = "<group>"; };
 		028CF7181AF8508A0028DA35 /* CardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
 		0295F2071B4C83ED0029F911 /* NetworkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTableViewController.swift; sourceTree = "<group>"; };
 		0295F2091B4C84F10029F911 /* ProductCell4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCell4.swift; sourceTree = "<group>"; };
-		0295F20B1B4C8F370029F911 /* BroadcastCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadcastCell.swift; sourceTree = "<group>"; };
-		0295F20D1B4C91BF0029F911 /* SearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		0295F20F1B4CBFBB0029F911 /* CheckoutCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutCell.swift; sourceTree = "<group>"; };
-		02C9746D1B3F5FA20019A046 /* ProductCell2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCell2.swift; sourceTree = "<group>"; };
 		02C9746F1B45EA8F0019A046 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
-		02C974711B46E1EE0019A046 /* PersonalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalTableViewController.swift; sourceTree = "<group>"; };
-		02C974731B46E27F0019A046 /* EditPersonalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPersonalCell.swift; sourceTree = "<group>"; };
-		02C974751B46E8510019A046 /* PeripheralsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeripheralsCell.swift; sourceTree = "<group>"; };
-		02C974771B46EF6E0019A046 /* ProductCell3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCell3.swift; sourceTree = "<group>"; };
 		02D5C51C1B0FC33E00B172AF /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		02D9CA4C1AF838330087175F /* Emelem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Emelem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02D9CA501AF838330087175F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -129,13 +114,10 @@
 		02E7347B1AFC2567001B5474 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		02E7347D1AFC25DB001B5474 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		02F818801AFD7814008C06EA /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		02F818821AFD81D9008C06EA /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		02F818841B054941008C06EA /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		02F818861B0A9D68008C06EA /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		02F818881B0A9E99008C06EA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		02F8188A1B0AAACE008C06EA /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		02F8188C1B0ACFB1008C06EA /* KeptListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeptListTableViewController.swift; sourceTree = "<group>"; };
-		02F8188E1B0ADB4F008C06EA /* ProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		6A7E9C89E28EAEAD11D3402C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		87D76C3E7B0BC99C40824AE7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E1E5DD5FEA60386906579034 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -182,13 +164,10 @@
 				02D9CA561AF838330087175F /* ViewController.swift */,
 				02759C9D1AFC3D7B0065A492 /* LoginViewController.swift */,
 				028CF7181AF8508A0028DA35 /* CardsViewController.swift */,
-				02F818821AFD81D9008C06EA /* ProfileViewController.swift */,
 				026809811B2924D10006C43B /* ShippingTableViewController.swift */,
 				026809851B29AD830006C43B /* ShipAddDetailViewController.swift */,
-				02C974711B46E1EE0019A046 /* PersonalTableViewController.swift */,
 				0295F2071B4C83ED0029F911 /* NetworkTableViewController.swift */,
-				02F8188C1B0ACFB1008C06EA /* KeptListTableViewController.swift */,
-				020B3F241B1FD36C00B0AD6E /* NetworkKeptProductTableViewController.swift */,
+				022F1F0E1B572717000223E3 /* ProfileTableViewController.swift */,
 				02F818861B0A9D68008C06EA /* MapViewController.swift */,
 				02D5C51C1B0FC33E00B172AF /* ChatViewController.swift */,
 				02C9746F1B45EA8F0019A046 /* ProductDetailViewController.swift */,
@@ -264,17 +243,11 @@
 			children = (
 				02D9CA751AF839AD0087175F /* CardView.swift */,
 				028CF7151AF84D150028DA35 /* SwipeView.swift */,
-				02C974731B46E27F0019A046 /* EditPersonalCell.swift */,
-				02C974751B46E8510019A046 /* PeripheralsCell.swift */,
-				02F8188E1B0ADB4F008C06EA /* ProductCell.swift */,
-				02C9746D1B3F5FA20019A046 /* ProductCell2.swift */,
-				02C974771B46EF6E0019A046 /* ProductCell3.swift */,
 				0295F2091B4C84F10029F911 /* ProductCell4.swift */,
-				0295F20B1B4C8F370029F911 /* BroadcastCell.swift */,
-				0295F20D1B4C91BF0029F911 /* SearchCell.swift */,
-				020B3F261B1FD4B200B0AD6E /* NetworkCell.swift */,
 				026809831B2924ED0006C43B /* ShippingCell.swift */,
 				0295F20F1B4CBFBB0029F911 /* CheckoutCell.swift */,
+				022F1F101B572AC9000223E3 /* ProfileCell.swift */,
+				028B44C11B5D6A6500C5B79C /* SettingCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -468,41 +441,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				020B3F251B1FD36C00B0AD6E /* NetworkKeptProductTableViewController.swift in Sources */,
 				02F818871B0A9D68008C06EA /* MapViewController.swift in Sources */,
+				022F1F0F1B572717000223E3 /* ProfileTableViewController.swift in Sources */,
 				0295F20A1B4C84F10029F911 /* ProductCell4.swift in Sources */,
 				02759C9E1AFC3D7B0065A492 /* LoginViewController.swift in Sources */,
 				02D5C51D1B0FC33E00B172AF /* ChatViewController.swift in Sources */,
 				027B6CEC1B1407ED00110516 /* Message.swift in Sources */,
 				02D9CA571AF838330087175F /* ViewController.swift in Sources */,
-				020B3F271B1FD4B200B0AD6E /* NetworkCell.swift in Sources */,
-				02C974761B46E8510019A046 /* PeripheralsCell.swift in Sources */,
 				02D9CA551AF838330087175F /* Emelem.xcdatamodeld in Sources */,
 				0235EC321B0D7B34002B8A0C /* Kept.swift in Sources */,
 				0253C7C71B38DA550014EB95 /* Address.swift in Sources */,
-				02C974781B46EF6E0019A046 /* ProductCell3.swift in Sources */,
-				02C974721B46E1EE0019A046 /* PersonalTableViewController.swift in Sources */,
 				026809861B29AD830006C43B /* ShipAddDetailViewController.swift in Sources */,
-				0295F20E1B4C91BF0029F911 /* SearchCell.swift in Sources */,
 				026809841B2924ED0006C43B /* ShippingCell.swift in Sources */,
 				028CF7191AF8508A0028DA35 /* CardsViewController.swift in Sources */,
-				02F8188F1B0ADB4F008C06EA /* ProductCell.swift in Sources */,
+				022F1F111B572AC9000223E3 /* ProfileCell.swift in Sources */,
 				02F818811AFD7814008C06EA /* User.swift in Sources */,
 				02D9CA761AF839AD0087175F /* CardView.swift in Sources */,
-				02F8188D1B0ACFB1008C06EA /* KeptListTableViewController.swift in Sources */,
 				02C974701B45EA8F0019A046 /* ProductDetailViewController.swift in Sources */,
 				0220BB4F1B225B2900393BBC /* NetworkKept.swift in Sources */,
-				02F818831AFD81D9008C06EA /* ProfileViewController.swift in Sources */,
-				0295F20C1B4C8F370029F911 /* BroadcastCell.swift in Sources */,
 				02F818851B054941008C06EA /* Product.swift in Sources */,
 				026809821B2924D10006C43B /* ShippingTableViewController.swift in Sources */,
-				02C9746E1B3F5FA20019A046 /* ProductCell2.swift in Sources */,
 				028CF7161AF84D150028DA35 /* SwipeView.swift in Sources */,
 				02F8188B1B0AAACE008C06EA /* Location.swift in Sources */,
 				0295F2101B4CBFBB0029F911 /* CheckoutCell.swift in Sources */,
 				02D9CA521AF838330087175F /* AppDelegate.swift in Sources */,
 				0295F2081B4C83ED0029F911 /* NetworkTableViewController.swift in Sources */,
-				02C974741B46E27F0019A046 /* EditPersonalCell.swift in Sources */,
+				028B44C21B5D6A6500C5B79C /* SettingCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

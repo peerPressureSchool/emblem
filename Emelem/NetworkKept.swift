@@ -28,10 +28,9 @@ func fetchNetworkKeptProducts( callback: ([NetworkKeptProduct]) -> ()){
                     in
                     (object.objectId! as String, object.objectForKey("recipient") as! String)
                 })
-                let followerIDs = myRelationships.map({$0.followerID})
- 
-                
-           
+                var followerIDs = myRelationships.map({$0.followerID})
+                var currentUserID = currentUser()!.id as String
+                followerIDs += [currentUserID]
     
     //first Query isolates products that have been kept from Action class into an array
     PFQuery(className: "Action")
