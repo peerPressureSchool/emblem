@@ -28,7 +28,7 @@ class CardView: UIView {
     private let chatButton: UIButton = UIButton()
     private let shareButton: UIButton = UIButton()
     private let mapButton: UIButton = UIButton()
-    private let infoButton: UIButton = UIButton()
+    private let buyButton: UIButton = UIButton()
     
     //action icons (TBD)
     //ADD ACTION ICONS
@@ -78,6 +78,7 @@ class CardView: UIView {
             if let productPrice = productPrice {
                 productNameLabel.font = UIFont.systemFontOfSize(20)
                 productPriceLabel.text = "$\(productPrice)"
+                
             }
         }
     }
@@ -91,6 +92,7 @@ class CardView: UIView {
             }
         }
     }
+  
     
     
     //initializers for CardView
@@ -145,6 +147,38 @@ class CardView: UIView {
         referrerCountLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
         addSubview(referrerCountLabel)
         
+        //buttons
+        chatButton.setTranslatesAutoresizingMaskIntoConstraints(false)
+        addSubview(chatButton)
+        
+        mapButton.setTranslatesAutoresizingMaskIntoConstraints(false)
+        addSubview(mapButton)
+        
+        shareButton.setTranslatesAutoresizingMaskIntoConstraints(false)
+        addSubview(shareButton)
+        
+        buyButton.setTranslatesAutoresizingMaskIntoConstraints(false)
+        buyButton.layer.borderColor = UIColor.grayColor().CGColor
+        buyButton.layer.borderWidth = 1
+        buyButton.setTitleColor(UIColor.grayColor(), forState: .Normal)
+        buyButton.setTitle("Price", forState: UIControlState.Normal)
+        addSubview(buyButton)
+        
+        chatButton.setTranslatesAutoresizingMaskIntoConstraints(false)
+        let chatIcon = UIImage(named: "ChatIcon")
+        chatButton.setBackgroundImage(chatIcon, forState: .Normal)
+        addSubview(chatButton)
+        
+        mapButton.setTranslatesAutoresizingMaskIntoConstraints(false)
+        let mapIcon = UIImage(named: "MapIcon")
+        mapButton.setBackgroundImage(mapIcon, forState: .Normal)
+        addSubview(mapButton)
+        
+        shareButton.setTranslatesAutoresizingMaskIntoConstraints(false)
+        let shareIcon = UIImage(named: "ShareIcon")
+        shareButton.setBackgroundImage(shareIcon, forState: .Normal)
+        addSubview(shareButton)
+        
         //design for CardView (colors, outline, rounded edges)
         backgroundColor = UIColor.whiteColor()
         layer.borderWidth = 0.5
@@ -159,21 +193,21 @@ class CardView: UIView {
     private func setConstraints() {
         
         //brandAvatar
-        addConstraint(NSLayoutConstraint(item: brandImageView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Top, multiplier: 1.0, constant: 0))
+        /*addConstraint(NSLayoutConstraint(item: brandImageView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Top, multiplier: 1.0, constant: 0))
         addConstraint(NSLayoutConstraint(item: brandImageView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Leading, multiplier: 1.0, constant: 0))
         brandImageView.frame.size.width = 50.0
-        brandImageView.frame.size.height = 50.0
+        brandImageView.frame.size.height = 50.0*/
 
         
         //productNameLabel
         addConstraint(NSLayoutConstraint(item: productNameLabel, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Top, multiplier: 1.0, constant: 0))
-        addConstraint(NSLayoutConstraint(item: productNameLabel, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Leading, multiplier: 1.0, constant: 60))
+        addConstraint(NSLayoutConstraint(item: productNameLabel, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Leading, multiplier: 1.0, constant: 10))
         productNameLabel.frame.size.width = 100.0
         productNameLabel.frame.size.height = 25.0
         
         //brandNameLabel
-        addConstraint(NSLayoutConstraint(item: brandNameLabel, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Top, multiplier: 1.0, constant: 30.0))
-        addConstraint(NSLayoutConstraint(item: brandNameLabel, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Leading, multiplier: 1.0, constant: 60))
+        addConstraint(NSLayoutConstraint(item: brandNameLabel, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Top, multiplier: 1.0, constant: 20.0))
+        addConstraint(NSLayoutConstraint(item: brandNameLabel, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Leading, multiplier: 1.0, constant: 10))
         brandNameLabel.frame.size.width = 100.0
         brandNameLabel.frame.size.height = 25.0
         
@@ -190,10 +224,36 @@ class CardView: UIView {
         productPriceLabel.frame.size.height = 25.0
         
         //shippingCost
-        addConstraint(NSLayoutConstraint(item: shipPriceLabel, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Top, multiplier: 1.0, constant: 30))
+        addConstraint(NSLayoutConstraint(item: shipPriceLabel, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Top, multiplier: 1.0, constant: 20))
         addConstraint(NSLayoutConstraint(item: shipPriceLabel, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Trailing, multiplier: 1.0, constant: 0))
         shipPriceLabel.frame.size.width = 30.0
         shipPriceLabel.frame.size.height = 25.0
+        
+        //buyButton
+        addConstraint(NSLayoutConstraint(item: buyButton, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Top, multiplier: 1.0, constant: 420))
+        addConstraint(NSLayoutConstraint(item: buyButton, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Leading, multiplier: 1.0, constant: 10))
+        addConstraint(NSLayoutConstraint(item: buyButton, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Width, multiplier: 0.3, constant: 0))
+        buyButton.frame.size.height = 25
+        
+        //chatButton
+        addConstraint(NSLayoutConstraint(item: chatButton, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Top, multiplier: 1.0, constant: 425))
+        addConstraint(NSLayoutConstraint(item: chatButton, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Trailing, multiplier: 1.0, constant: -70))
+        addConstraint(NSLayoutConstraint(item: chatButton, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.Width, multiplier: 1, constant: 25))
+        addConstraint(NSLayoutConstraint(item: chatButton, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.Height, multiplier: 1, constant: 25))
+        
+        //mapButton
+        addConstraint(NSLayoutConstraint(item: mapButton, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Top, multiplier: 1.0, constant: 425))
+        addConstraint(NSLayoutConstraint(item: mapButton, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Trailing, multiplier: 1.0, constant: -40))
+        addConstraint(NSLayoutConstraint(item: mapButton, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.Width, multiplier: 1, constant: 25))
+        addConstraint(NSLayoutConstraint(item: mapButton, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.Height, multiplier: 1, constant: 25))
+        
+        //shareButton
+        addConstraint(NSLayoutConstraint(item: shareButton, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Top, multiplier: 1.0, constant: 425))
+        addConstraint(NSLayoutConstraint(item: shareButton, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Trailing, multiplier: 1.0, constant: -10))
+        addConstraint(NSLayoutConstraint(item: shareButton, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.Width, multiplier: 1, constant: 25))
+        addConstraint(NSLayoutConstraint(item: shareButton, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.Height, multiplier: 1, constant: 25))
+
+
         
     }
 }

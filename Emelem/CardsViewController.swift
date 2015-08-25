@@ -21,9 +21,14 @@ class CardsViewController: UIViewController, SwipeViewDelegate, CLLocationManage
     let backCardTopMargin: CGFloat = 10
     
     @IBOutlet weak var cardStackView: UIView!
+
     
     var backCard: Card?
     var frontCard: Card?
+    
+    @IBOutlet weak var commissionTracker: UIBarButtonItem!
+    
+    var commissionTotal: Double?
     
     var products: [Product]?
     
@@ -54,7 +59,15 @@ class CardsViewController: UIViewController, SwipeViewDelegate, CLLocationManage
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+       
         navigationItem.titleView = UIImageView(image: UIImage(named: "nav-header"))
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        self.commissionTotal = appDelegate.commissionTotal
+        println(self.commissionTotal)
+        
+        self.commissionTracker.title = "$\(self.commissionTotal!)"
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -86,6 +99,7 @@ class CardsViewController: UIViewController, SwipeViewDelegate, CLLocationManage
             cardView.brandImage = brandImage
         })
         
+       
         
         let swipeView = SwipeView(frame: createCardFrame(0))
         swipeView.delegate = self
@@ -141,6 +155,10 @@ class CardsViewController: UIViewController, SwipeViewDelegate, CLLocationManage
         }
     }
     
+    
+    //commission transition
+    
+   
     
     
 }

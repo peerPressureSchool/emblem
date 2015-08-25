@@ -15,6 +15,9 @@ class NetworkTableViewController: UITableViewController {
     var networkKeptProducts: [NetworkKeptProduct] = []
     var keptProducts: [KeptProduct] = []
     
+    @IBOutlet weak var commissionTracker: UIBarButtonItem!
+    var commissionTotal: Double?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,6 +45,13 @@ class NetworkTableViewController: UITableViewController {
                 self.tableView.reloadData()
             })
         }
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        self.commissionTotal = appDelegate.commissionTotal
+        println(self.commissionTotal)
+        
+        self.commissionTracker.title = "$\(self.commissionTotal!)"
+        
         
     }
 
@@ -81,6 +91,7 @@ class NetworkTableViewController: UITableViewController {
                     cell.productImageView.image = productImage
                 })
                 //cell.productPriceLabel.text = "$\(product.price)"
+                cell.buyButton.setTitle("Buy - $\(product.price)", forState: .Normal)
                 cell.brandNameLabel.text = product.brandName
                 //cell.shipPriceLabel.text = "+ $\(product.shippingCost)S&H"
                 cell.chatButton.tag = indexPath.row
@@ -94,6 +105,7 @@ class NetworkTableViewController: UITableViewController {
                     cell.productImageView.image = productImage
                 })
                 //cell.productPriceLabel.text = "$\(product.price)"
+                cell.buyButton.setTitle("Buy - $\(product.price)", forState: .Normal)
                 cell.brandNameLabel.text = product.brandName
                 //cell.shipPriceLabel.text = "+ $\(product.shippingCost)S&H"
                 cell.chatButton.tag = indexPath.row
@@ -104,7 +116,7 @@ class NetworkTableViewController: UITableViewController {
 
 
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-            return 511
+            return 450
     }
     
     

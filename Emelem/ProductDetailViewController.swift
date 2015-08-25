@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProductDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ProductDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
     var productSku: String?
     var product: [Product] = []
@@ -17,19 +17,21 @@ class ProductDetailViewController: UIViewController, UITableViewDataSource, UITa
     @IBOutlet weak var brandNameLabel: UILabel!
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productDescription: UILabel!
-    @IBOutlet weak var price: UILabel!
-    @IBOutlet weak var shippingCost: UILabel!
+    
     
     @IBOutlet weak var chatButton: UIButton!
     @IBOutlet weak var mapButton: UIButton!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var buyButton: UIButton!
     
     @IBOutlet weak var checkoutTableView: UITableView!
     
+    var checkoutOptions = ["Size", "Color", "Ship to", "Pay with"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        println(productSku)
+        
         // Do any additional setup after loading the view.
     }
     
@@ -46,12 +48,10 @@ class ProductDetailViewController: UIViewController, UITableViewDataSource, UITa
                 }
             )
             self.productDescription.text = self.product[0].productDescription
-            self.price.text = "$\(self.product[0].price)"
-            self.shippingCost.text = "$\(self.product[0].shippingCost)"
             self.productNameLabel.text = self.product[0].productName
             self.brandNameLabel.text = self.product[0].brandName
-            
         })
+        self.checkoutTableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,40 +59,37 @@ class ProductDetailViewController: UIViewController, UITableViewDataSource, UITa
         // Dispose of any resources that can be recreated.
     }
     
-    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return self.checkoutOptions.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell: CheckoutCell = tableView.dequeueReusableCellWithIdentifier("CheckoutCell", forIndexPath: indexPath) as! CheckoutCell
-        
-        
-        
-        
+        let cell: CheckoutCell = tableView.dequeueReusableCellWithIdentifier("CheckoutCell", forIndexPath: indexPath) as! CheckoutCell
+        cell.checkoutParamLabel.text = self.checkoutOptions[indexPath.row]
         return cell
-        
-        /*if indexPath == 0 {
-            cell.checkoutFieldLabel.text = "Size"
-            return cell
-        } else if indexPath == 1 {
-            cell.checkoutFieldLabel.text = "Color"
-            return cell
-        } else if indexPath == 2 {
-            cell.checkoutFieldLabel.text = "Address"
-            return cell
-        } else if indexPath == 3 {
-            cell.checkoutFieldLabel.text = "Card"
-            return cell
-        } else {
-            cell.checkoutFieldLabel.text = "Buy"
-            return cell
-        }*/
     }
-
-    /*
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        <#code#>
-    }*/
-
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "chatVCSegue" {
+            let chatVC: ChatViewController = segue.destinationViewController as! ChatViewController
+            chatVC.keptProductSKU = self.productSku
+            chatVC.title = productNameLabel.text
+        } else if segue.identifier == "mapVCSegue" {
+            let mapVC: MapViewController = segue.destinationViewController as! MapViewController
+            mapVC.keptProductSKU = self.productSku
+            mapVC.title = productNameLabel.text
+        }
+    }
+    
+    @IBAction func buyButtonPressed(sender: AnyObject) {
+        fetchProductBySk(productSku!, {
+            returnedProduct in
+            self.product = returnedProduct
+            
+            purchase(self.product[0])
+            println("purchase completed")
+        })
+    }
+    
+    
 }

@@ -10,7 +10,8 @@ import UIKit
 
 class CheckoutCell: UITableViewCell {
 
-    @IBOutlet weak var checkoutFieldLabel: UILabel!
+    
+    @IBOutlet weak var checkoutParamLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

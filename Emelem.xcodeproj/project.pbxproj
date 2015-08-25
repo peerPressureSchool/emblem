@@ -20,6 +20,9 @@
 		027B6CEA1B14079C00110516 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 027B6CE91B14079C00110516 /* libc++.dylib */; };
 		027B6CEC1B1407ED00110516 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027B6CEB1B1407ED00110516 /* Message.swift */; };
 		028B44C21B5D6A6500C5B79C /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028B44C11B5D6A6500C5B79C /* SettingCell.swift */; };
+		028B44C41B6EC5C400C5B79C /* CommissionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028B44C31B6EC5C400C5B79C /* CommissionCell.swift */; };
+		028B44C61B6ECB0F00C5B79C /* CommissionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028B44C51B6ECB0F00C5B79C /* CommissionTableViewController.swift */; };
+		028B44C81B7ABB6800C5B79C /* Sale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028B44C71B7ABB6800C5B79C /* Sale.swift */; };
 		028CF7161AF84D150028DA35 /* SwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028CF7151AF84D150028DA35 /* SwipeView.swift */; };
 		028CF7191AF8508A0028DA35 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028CF7181AF8508A0028DA35 /* CardsViewController.swift */; };
 		0295F2081B4C83ED0029F911 /* NetworkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0295F2071B4C83ED0029F911 /* NetworkTableViewController.swift */; };
@@ -80,6 +83,9 @@
 		027B6CE91B14079C00110516 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		027B6CEB1B1407ED00110516 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		028B44C11B5D6A6500C5B79C /* SettingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
+		028B44C31B6EC5C400C5B79C /* CommissionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommissionCell.swift; sourceTree = "<group>"; };
+		028B44C51B6ECB0F00C5B79C /* CommissionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommissionTableViewController.swift; sourceTree = "<group>"; };
+		028B44C71B7ABB6800C5B79C /* Sale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sale.swift; sourceTree = "<group>"; };
 		028CF7151AF84D150028DA35 /* SwipeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeView.swift; sourceTree = "<group>"; };
 		028CF7181AF8508A0028DA35 /* CardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
 		0295F2071B4C83ED0029F911 /* NetworkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTableViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +177,7 @@
 				02F818861B0A9D68008C06EA /* MapViewController.swift */,
 				02D5C51C1B0FC33E00B172AF /* ChatViewController.swift */,
 				02C9746F1B45EA8F0019A046 /* ProductDetailViewController.swift */,
+				028B44C51B6ECB0F00C5B79C /* CommissionTableViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -248,6 +255,7 @@
 				0295F20F1B4CBFBB0029F911 /* CheckoutCell.swift */,
 				022F1F101B572AC9000223E3 /* ProfileCell.swift */,
 				028B44C11B5D6A6500C5B79C /* SettingCell.swift */,
+				028B44C31B6EC5C400C5B79C /* CommissionCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -283,6 +291,7 @@
 				02F8188A1B0AAACE008C06EA /* Location.swift */,
 				027B6CEB1B1407ED00110516 /* Message.swift */,
 				02F818841B054941008C06EA /* Product.swift */,
+				028B44C71B7ABB6800C5B79C /* Sale.swift */,
 				0220BB4E1B225B2800393BBC /* NetworkKept.swift */,
 				0253C7C61B38DA550014EB95 /* Address.swift */,
 			);
@@ -451,14 +460,17 @@
 				02D9CA551AF838330087175F /* Emelem.xcdatamodeld in Sources */,
 				0235EC321B0D7B34002B8A0C /* Kept.swift in Sources */,
 				0253C7C71B38DA550014EB95 /* Address.swift in Sources */,
+				028B44C61B6ECB0F00C5B79C /* CommissionTableViewController.swift in Sources */,
 				026809861B29AD830006C43B /* ShipAddDetailViewController.swift in Sources */,
 				026809841B2924ED0006C43B /* ShippingCell.swift in Sources */,
 				028CF7191AF8508A0028DA35 /* CardsViewController.swift in Sources */,
 				022F1F111B572AC9000223E3 /* ProfileCell.swift in Sources */,
 				02F818811AFD7814008C06EA /* User.swift in Sources */,
+				028B44C41B6EC5C400C5B79C /* CommissionCell.swift in Sources */,
 				02D9CA761AF839AD0087175F /* CardView.swift in Sources */,
 				02C974701B45EA8F0019A046 /* ProductDetailViewController.swift in Sources */,
 				0220BB4F1B225B2900393BBC /* NetworkKept.swift in Sources */,
+				028B44C81B7ABB6800C5B79C /* Sale.swift in Sources */,
 				02F818851B054941008C06EA /* Product.swift in Sources */,
 				026809821B2924D10006C43B /* ShippingTableViewController.swift in Sources */,
 				028CF7161AF84D150028DA35 /* SwipeView.swift in Sources */,

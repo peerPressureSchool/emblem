@@ -15,7 +15,8 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource {
     let cardsVC: UIViewController! = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CardsNavController") as! UIViewController
     let profileVC: UIViewController! = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ProfileNavController") as! UIViewController
     let networkVC: UIViewController! = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("NetworkTableNavController") as! UIViewController
-    
+  
+
     
     
     override func viewDidLoad() {
@@ -43,10 +44,8 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource {
         setViewControllers([previousVC], direction: UIPageViewControllerNavigationDirection.Reverse, animated: true, completion: nil)
     }
     
-    /*func goToChatVC() {
-        presentViewController(chatVC, animated: true, completion: nil)
-    }
-    */
+ 
+    
     
     
     //UIPageViewController Data Source functions

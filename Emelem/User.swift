@@ -37,3 +37,15 @@ func currentUser() -> User? {
     return nil
 }
 
+//TEST FOR CHAT
+
+func getUserAsync(userID: String, callback: (User) -> () ) {
+    PFUser.query()?.whereKey("objectId", equalTo: userID).getFirstObjectInBackgroundWithBlock( { (object, error) -> Void in
+        if let pfUser = object as? PFUser {
+            let user = pfUsertoUser(pfUser)
+            callback(user) }
+    })
+}
+
+// END TEST
+
